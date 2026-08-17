@@ -440,7 +440,7 @@ footer{margin-top:60px; padding-top:24px; border-top:1px solid var(--line); font
 <div class="cta">
   <p><strong>やりたいこと・通学の頻度・お住まいの地域から、条件に合う通信制高校を探して、<br>まとめて資料請求できるサービスがあります。</strong></p>
   <p>費用はかかりません。まずは何校か資料を取り寄せて、学費や通学スタイルを比べてみることから始めてみてください。</p>
-  <a href="#" class="cta-btn" data-cta="main"><span class="cta-badge">カンタン60秒</span>無料で人気校の資料を請求する</a>
+  <a href="https://ad-fam.com/ad/p/r?_site=49717&amp;_article=16463" class="cta-btn" data-cta="main" rel="sponsored nofollow"><span class="cta-badge">カンタン60秒</span>無料で人気校の資料を請求する</a>
   <p class="cta-sub">※資料請求後、学校から連絡が入る場合があります。気になる点は、その際に直接ご確認いただけます。</p>
 </div>
 
@@ -473,7 +473,7 @@ footer{margin-top:60px; padding-top:24px; border-top:1px solid var(--line); font
 
 <!-- 追従CTA（スマホのみ） -->
 <div id="fixcta">
-  <a href="#" data-cta="fixed"><span class="cta-badge">カンタン60秒</span>無料で人気校の資料を請求する</a>
+  <a href="https://ad-fam.com/ad/p/r?_site=49717&amp;_article=16463" data-cta="fixed" rel="sponsored nofollow"><span class="cta-badge">カンタン60秒</span>無料で人気校の資料を請求する</a>
 </div>
 
 
@@ -487,8 +487,8 @@ footer{margin-top:60px; padding-top:24px; border-top:1px solid var(--line); font
 (function(){
   'use strict';
 
-  // ---- ASPリンク（▼ここを差し替える④と同じURLを入れる） ----
-  var ASP_URL = '#';   // 例: 'https://px.a8.net/svt/ejp?a8mat=XXXX&sid=gakuhi'
+  // ---- ASPリンク（▼ここを差し替える④） ----
+  var ASP_URL = 'https://ad-fam.com/ad/p/r?_site=49717&_article=16463';
 
   // CTAのhrefを一括設定
   document.querySelectorAll('[data-cta]').forEach(function(el){
@@ -586,37 +586,32 @@ footer{margin-top:60px; padding-top:24px; border-top:1px solid var(--line); font
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeLb(); });
 
   // ---- 追従CTA ----
-  // 「親にできるのは…」から表示、「正直かなり大変です。」が見えたら非表示（本体CTAとの重複を防ぐ）
+  // 表示する区間：「親にできるのは…」に到達 〜 「正直かなり大変です。」が見え始める直前まで
+  // それ以降（本体CTAが見えている間・ページ末尾）は非表示にして重複を防ぐ
   var fix   = document.getElementById('fixcta');
   var start = document.getElementById('closing');
   var stop  = document.getElementById('pre-cta');
-  var passed = false, nearCta = false;
+
+  function topOf(el){
+    var t = 0;
+    while (el) { t += el.offsetTop; el = el.offsetParent; }
+    return t;
+  }
 
   function updateFix(){
-    if (!fix) return;
-    if (passed && !nearCta) fix.classList.add('on');
-    else fix.classList.remove('on');
+    if (!fix || !start) return;
+    var vh     = window.innerHeight;
+    var bottom = window.scrollY + vh;          // 画面の下端
+    var from   = topOf(start);                 // ここに到達したら表示
+    var to     = stop ? topOf(stop) : Infinity; // ここが見え始めたら非表示
+    var show   = bottom > from && bottom < to;
+    fix.classList.toggle('on', show);
   }
 
-  if (fix && 'IntersectionObserver' in window) {
-    if (start) {
-      new IntersectionObserver(function(es){
-        es.forEach(function(e){ if (e.isIntersecting) { passed = true; updateFix(); } });
-      }, {threshold: 0}).observe(start);
-    }
-    if (stop) {
-      new IntersectionObserver(function(es){
-        es.forEach(function(e){ nearCta = e.isIntersecting; updateFix(); });
-      }, {threshold: 0}).observe(stop);
-    }
-  } else if (fix && start) {
-    window.addEventListener('scroll', function(){
-      var y = window.scrollY + window.innerHeight;
-      passed  = y > start.offsetTop;
-      nearCta = stop ? y > stop.offsetTop : false;
-      updateFix();
-    }, {passive:true});
-  }
+  window.addEventListener('scroll', updateFix, {passive:true});
+  window.addEventListener('resize', updateFix);
+  window.addEventListener('load', updateFix);
+  updateFix();
 })();
 </script>
 
