@@ -496,6 +496,22 @@ footer{margin-top:60px; padding-top:24px; border-top:1px solid var(--line); font
   // ---- ASPリンク（▼ここを差し替える④） ----
   var ASP_URL = 'https://ad-fam.com/ad/p/r?_site=49717&_article=16463';
 
+  /* ------------------------------------------------------------------
+     famAD タグ発火向上：URLパラメータをASPリンクへ引き継ぐ
+     広告クリックで付く gclid 等を ad-fam.com のリンクに渡します。
+     これが無いと成果とクリックが紐づかず、Google広告に実CVを戻せません。
+     ------------------------------------------------------------------ */
+  (function(){
+    var prm = location.search;              // 例: "?gclid=xxx&utm_source=yyy"
+    if (!prm || prm.length < 2) return;
+    var query = prm.slice(1);               // 先頭の "?" を外す
+    document.querySelectorAll('a[href*="ad-fam.com"]').forEach(function(a){
+      var href = a.getAttribute('href');
+      if (!href || href.indexOf(query) > -1) return;   // 二重付与を防ぐ
+      a.setAttribute('href', href + (href.indexOf('?') > -1 ? '&' : '?') + query);
+    });
+  })();
+
   // CTAのhrefを一括設定
   document.querySelectorAll('[data-cta]').forEach(function(el){
     if (ASP_URL !== '#') el.setAttribute('href', ASP_URL);
