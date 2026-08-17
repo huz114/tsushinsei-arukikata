@@ -295,7 +295,7 @@ footer{margin-top:60px; padding-top:24px; border-top:1px solid var(--line); font
 <!-- ====================================================================
      無償化
      ==================================================================== -->
-<h2>2026年度から、無償化の対象が広がりました</h2>
+<h2 id="cta-from">2026年度から、無償化の対象が広がりました</h2>
 
 <p>ニュースでも取り上げられている高校の授業料無償化ですが、2026年度から内容が変わりました。通信制高校も対象です。</p>
 
@@ -586,10 +586,11 @@ footer{margin-top:60px; padding-top:24px; border-top:1px solid var(--line); font
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeLb(); });
 
   // ---- 追従CTA ----
-  // 表示する区間：「親にできるのは…」に到達 〜 「正直かなり大変です。」が見え始める直前まで
+  // 表示する区間：「2026年度から、無償化の対象が広がりました」に到達
+  //             〜「正直かなり大変です。」が見え始める直前まで
   // それ以降（本体CTAが見えている間・ページ末尾）は非表示にして重複を防ぐ
   var fix   = document.getElementById('fixcta');
-  var start = document.getElementById('closing');
+  var start = document.getElementById('cta-from');
   var stop  = document.getElementById('pre-cta');
 
   function topOf(el){
