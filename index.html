@@ -17,21 +17,27 @@
      ====================================================================== -->
 <script>
   const MEASURE = {
-    GA4_ID:        'G-XXXXXXXXXX',      // GA4の測定ID
-    CLARITY_ID:    'xxxxxxxxxx',        // Microsoft ClarityのプロジェクトID
+    GA4_ID:        'G-9M597GDE8J',      // GA4の測定ID
+    CLARITY_ID:    'y3sgntw5b4',        // Microsoft ClarityのプロジェクトID
     ADS_ID:        'AW-XXXXXXXXX',      // Google広告のコンバージョンID
     ADS_LABEL:     'xxxxxxxxxxxxxxxxxx' // Google広告のコンバージョンラベル
   };
 </script>
 
-<!-- GA4 + Google広告 -->
-<script async src="https://www.googletagmanager.com/gtag/js"></script>
+<!-- GA4 + Google広告（MEASUREの値だけ変えれば切り替わります） -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  if (MEASURE.GA4_ID.indexOf('X') === -1) gtag('config', MEASURE.GA4_ID);
-  if (MEASURE.ADS_ID.indexOf('X') === -1) gtag('config', MEASURE.ADS_ID);
+  (function(){
+    var ids = [MEASURE.GA4_ID, MEASURE.ADS_ID].filter(function(id){ return id.indexOf('X') === -1; });
+    if (!ids.length) return;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + ids[0];
+    document.head.appendChild(s);
+    ids.forEach(function(id){ gtag('config', id); });
+  })();
 </script>
 
 <!-- Microsoft Clarity（ヒートマップ・セッション録画） -->
