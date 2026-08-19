@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ======================================================================
+     ▼ここを差し替える① ページ情報
+     ====================================================================== -->
+<title>通信制高校の学費はいくら？2026年の無償化で何が変わるか</title>
+<meta name="description" content="通信制高校の学費は公立と私立で10倍以上違います。2026年度から広がった就学支援金の内容と、申請のタイミングを保護者向けにまとめました。">
+
+<!-- ======================================================================
+     ▼ここを差し替える② 計測タグの設定値
+     取得したらこの3つを書き換えるだけでOK
+     ====================================================================== -->
+<script>
+  const MEASURE = {
+    GA4_ID:        'G-9M597GDE8J',      // GA4の測定ID
+    CLARITY_ID:    'y3sgntw5b4',        // Microsoft ClarityのプロジェクトID
+    ADS_ID:        'AW-XXXXXXXXX',      // Google広告のコンバージョンID
+    ADS_LABEL:     'xxxxxxxxxxxxxxxxxx' // Google広告のコンバージョンラベル
+  };
+</script>
+
+<!-- GA4 + Google広告（MEASUREの値だけ変えれば切り替わります） -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  (function(){
+    var ids = [MEASURE.GA4_ID, MEASURE.ADS_ID].filter(function(id){ return id.indexOf('X') === -1; });
+    if (!ids.length) return;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + ids[0];
+    document.head.appendChild(s);
+    ids.forEach(function(id){ gtag('config', id); });
+  })();
+</script>
+
+<!-- Microsoft Clarity（ヒートマップ・セッション録画） -->
+<script>
+  (function(c,l,a,r,i,t,y){
+    if (MEASURE.CLARITY_ID.indexOf('x') === 0) return; // 未設定なら読み込まない
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", MEASURE.CLARITY_ID);
+</script>
+
+<style>
+/* ======================================================================
+   ▼ここを差し替える③ 色・サイズ
+   この変数を変えるだけで全体のトーンが変わります
+   ====================================================================== */
+:root{
+  --pink:      #E8547C;   /* 強調色（見出しのキーワード、CTA） */
+  --pink-bg:   #FDEEF3;   /* 強調の背景 */
+  --blue:      #3B8FC4;   /* 補助色 */
+  --blue-bg:   #EAF4FA;
+  --yellow-bg: #FDF6E3;   /* 注釈の背景 */
+  --ink:       #2B2B2B;   /* 本文の文字色 */
+  --ink-sub:   #666;      /* 補足の文字色 */
+  --line:      #E5E5E5;
+  --bg:        #FFFFFF;
+  --maxw:      720px;     /* 本文の最大幅 */
+}
+
+*{box-sizing:border-box;}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans JP",system-ui,sans-serif;
+  font-size:17px; line-height:1.9; -webkit-font-smoothing:antialiased;
+  font-feature-settings:"palt" 1;
+}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 20px 80px;}
+
+/* 見出し */
+h1{
+  font-size:26px; line-height:1.5; font-weight:800; margin:32px 0 20px;
+  letter-spacing:.01em;
+}
+h2{
+  font-size:21px; line-height:1.55; font-weight:800; margin:52px 0 18px;
+  padding-left:14px; border-left:5px solid var(--pink); letter-spacing:.01em;
+}
+h3{font-size:18px; font-weight:700; margin:36px 0 14px;}
+.hl{color:var(--pink);}                                  /* 強調（赤） */
+/* マーカー：画面に入ったタイミングで左から右へ引かれる */
+.marker{
+  font-weight:700;
+  background-image:linear-gradient(transparent 58%, #FFF1A8 58%);
+  background-repeat:no-repeat;
+  background-size:0% 100%;
+  transition:background-size .9s cubic-bezier(.25,.8,.35,1);
+}
+.marker.drawn{background-size:100% 100%;}
+@media (prefers-reduced-motion:reduce){
+  .marker{transition:none; background-size:100% 100%;}
+}
+
+p{margin:0 0 18px;}
+ul{margin:0 0 18px; padding-left:1.4em;}
+li{margin-bottom:10px;}
+strong{font-weight:700;}
+
+/* 画像 */
+figure{margin:26px 0;}
+figure img{width:100%; height:auto; display:block; border-radius:8px; cursor:zoom-in;}
+figcaption{font-size:12px; color:var(--ink-sub); text-align:center; margin-top:6px;}
+
+/* 画像の拡大表示（タップ／クリックで開く） */
+#lightbox{
+  position:fixed; inset:0; z-index:200; background:rgba(0,0,0,.92);
+  display:none; align-items:center; justify-content:center; padding:12px;
+}
+#lightbox.on{display:flex;}
+#lightbox img{max-width:100%; max-height:92vh; width:auto; border-radius:4px;}
+#lightbox .lbclose{
+  position:fixed; top:8px; right:14px; color:#fff; font-size:34px; line-height:1;
+  background:none; border:none; cursor:pointer; padding:8px;
+}
+#lightbox .lbhint{
+  position:fixed; bottom:14px; left:0; right:0; text-align:center;
+  color:rgba(255,255,255,.7); font-size:12px;
+}
+.imgph{ /* 画像が未配置のときだけ自動で表示される枠 */
+  display:none;
+  background:var(--blue-bg); border:2px dashed var(--blue); border-radius:8px;
+  padding:40px 20px; text-align:center; color:var(--blue); font-size:14px; font-weight:700;
+}
+
+/* 表 */
+.tw{overflow-x:auto; margin:0 0 20px;}
+table{border-collapse:collapse; width:100%; font-size:15px; min-width:340px;}
+th,td{padding:12px 14px; border:1px solid var(--line); text-align:left; line-height:1.6;}
+th{background:#F7F7F7; font-weight:700; white-space:nowrap;}
+td.num{white-space:nowrap; font-variant-numeric:tabular-nums;}
+
+/* 注釈 */
+.note{
+  font-size:13px; color:var(--ink-sub); line-height:1.75; background:var(--yellow-bg);
+  padding:12px 14px; border-radius:6px; margin:0 0 20px;
+}
+
+/* CTA */
+.cta{
+  background:var(--pink-bg); border:2px solid var(--pink); border-radius:12px;
+  padding:26px 22px; margin:40px 0 20px; text-align:center;
+}
+.cta p{margin:0 0 16px; font-size:16px;}
+.cta-btn{
+  display:block; width:100%; background:var(--pink); color:#fff; text-decoration:none;
+  font-size:19px; font-weight:800; padding:20px 16px; border-radius:10px;
+  box-shadow:0 4px 0 #C43D62; letter-spacing:.02em;
+}
+.cta-btn:active{transform:translateY(3px); box-shadow:0 1px 0 #C43D62;}
+.cta-badge{
+  display:block; width:fit-content; margin:0 auto 10px;
+  background:#fff; color:var(--pink); font-size:13px; font-weight:800;
+  padding:4px 20px; border-radius:100px; letter-spacing:.04em;
+}
+#fixcta .cta-badge{font-size:11px; padding:2px 14px; margin-bottom:6px;}
+
+/* A：数秒に1回、光沢が横切る */
+.cta-btn, #fixcta a{position:relative; overflow:hidden;}
+.cta-btn::after, #fixcta a::after{
+  content:""; position:absolute; top:-60%; left:-70%; width:35%; height:220%;
+  background:linear-gradient(100deg, transparent, rgba(255,255,255,.5), transparent);
+  transform:skewX(-20deg); pointer-events:none;
+  animation:shine 4.5s ease-in-out infinite;
+}
+@keyframes shine{
+  0%, 65% {left:-70%;}
+  100%    {left:140%;}
+}
+
+/* B：画面に入ったら1回だけ跳ねる */
+.cta-btn.pop{animation:pop .65s cubic-bezier(.34,1.56,.64,1);}
+@keyframes pop{
+  0%   {transform:scale(1);}
+  40%  {transform:scale(1.05);}
+  70%  {transform:scale(.985);}
+  100% {transform:scale(1);}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .cta-btn::after, #fixcta a::after{display:none;}
+  .cta-btn.pop{animation:none;}
+}
+.cta-sub{font-size:13px; color:var(--ink-sub); margin-top:34px;}
+
+/* 信頼要素 */
+.trust{
+  background:var(--blue-bg); border:1px solid #C7E0EF; border-radius:10px;
+  padding:20px 22px; margin:0 0 30px;
+}
+.trust-t{
+  font-size:13px; font-weight:800; color:var(--blue); margin:0 0 12px;
+  letter-spacing:.05em;
+}
+.trust p{font-size:14.5px; margin:0 0 10px; line-height:1.8;}
+.trust p:last-child{margin-bottom:0;}
+.trust-note{font-size:13px; color:var(--ink-sub);}
+
+/* PR表記（ステマ規制対応） */
+.pr-label{
+  display:inline-block; font-size:12px; color:var(--ink-sub);
+  border:1px solid var(--line); border-radius:4px; padding:3px 10px; margin:24px 0 0;
+}
+
+/* フッターのリンク */
+.flinks{margin:20px 0 8px;}
+.flinks a{color:var(--ink-sub); text-decoration:underline;}
+.copy{font-size:11px; color:var(--ink-sub); margin:0;}
+
+/* 追従CTA（スマホのみ・スクロール後に出現） */
+#fixcta{
+  position:fixed; left:0; right:0; bottom:0; z-index:100; padding:10px 14px;
+  background:rgba(255,255,255,.96); border-top:1px solid var(--line);
+  transform:translateY(120%); transition:transform .3s ease;
+}
+#fixcta.on{transform:translateY(0);}
+#fixcta a{
+  display:block; background:var(--pink); color:#fff; text-decoration:none;
+  text-align:center; font-weight:800; font-size:16px; padding:15px; border-radius:8px;
+}
+
+footer{margin-top:60px; padding-top:24px; border-top:1px solid var(--line); font-size:12px; color:var(--ink-sub);}
+
+@media (min-width:768px){
+  body{font-size:17px;}
+  h1{font-size:32px;}
+  h2{font-size:24px;}
+  .cta-btn{display:inline-block; width:auto; padding:20px 48px;}
+  #fixcta{display:none;} /* PCでは追従CTAを出さない */
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<!-- ====================================================================
+     導入
+     ==================================================================== -->
+<p class="pr-label">PR</p>
+
+<h1>通信制高校の学費はいくら？<br>2026年の無償化で何が変わるか</h1>
+
+<figure>
+  <img src="images/01-hero.png" alt="学校の資料を見ながら進路を話し合う親子">
+  <div class="imgph">画像01：親子が資料を見ている写真（images/01-hero.png）</div>
+</figure>
+
+<p>夏が過ぎ、進路を真剣に考える時期になりました。</p>
+<p>お子様が通信制高校を選択肢に入れている、あるいはご家庭で話題に上がっている。<br>そんなときにまず気になるのが、<strong>学費のことではないでしょうか。</strong></p>
+<p>この記事では、通信制高校の学費が実際にいくらかかるのか、授業料以外にどんな費用が発生するのか、そして<strong>2026年度から拡大した無償化制度で何が変わるのか</strong>を、順にまとめました。</p>
+
+
+<!-- ====================================================================
+     学費
+     ==================================================================== -->
+<h2>通信制高校の学費は、公立と私立で<span class="hl">10倍以上</span>違います</h2>
+
+<p>まず結論からお伝えします。通信制高校の学費は、公立か私立かで大きく変わります。</p>
+
+<div class="tw">
+<table>
+  <tr><th></th><th class="num">公立</th><th class="num">私立</th></tr>
+  <tr><th>年間にかかる目安</th><td class="num">2〜6万円</td><td class="num">30〜65万円</td></tr>
+  <tr><th>入学金（初年度のみ）</th><td class="num">約500円</td><td class="num">数万円〜20万円程度</td></tr>
+</table>
+</div>
+
+<p class="note">※「年間にかかる目安」は、授業料のほか教科書代・施設費などを含んだ金額です。何が含まれるかは学校によって異なります。入学金は初年度のみかかります。</p>
+
+<figure>
+  <img src="images/02-gakuhi.png" alt="通信制高校の学費は公立と私立で10倍以上違う">
+  <div class="imgph">画像02：学費比較グラフ（images/02-gakuhi.png）</div>
+</figure>
+
+<p>通信制高校の多くは<strong>単位制</strong>です。全日制のように「年額いくら」と決まっているのではなく、<br><strong>履修する単位数に応じて授業料が決まる</strong>仕組みになっています。公立の場合、授業料は1単位あたり300〜1,000円程度が目安です。</p>
+<p>そのため、選ぶコースや通学の頻度によって金額が変わります。通学日数の多いコースや、美容・ITなどの専門コースを選ぶと、費用は上がる傾向にあります。</p>
+
+<h3>授業料のほかにかかる費用もあります</h3>
+<p>学費を考えるときに見落とされやすいのが、授業料以外の費用です。</p>
+<p>なお「<strong>スクーリング</strong>」とは、学校に登校して受ける授業のことです。通信制高校ではレポートの提出とあわせて卒業に必要な要件になっており、<strong>登校の日数は学校やコースによって大きく異なります。</strong></p>
+<ul>
+  <li><strong>スクーリングの交通費</strong>：本校や会場へ通う際の費用。遠方の場合は数万円かかることもあります。</li>
+  <li><strong>宿泊費</strong>：合宿型のスクーリングがある場合、3泊4日程度で3〜6万円前後が目安です。</li>
+  <li><strong>教材費・施設設備費</strong></li>
+  <li><strong>その他</strong>：通信費、生徒会費、オンライン学習システムの利用料など。</li>
+</ul>
+<p>これらは学校やコースによって大きく変わります。<strong>資料を取り寄せる段階で、授業料以外に何がかかるかを確認しておくと安心です。</strong></p>
+<p class="note">※学費は学校ごと・コースごとに異なります。詳細は学校にお問い合わせください。</p>
+
+
+<!-- ====================================================================
+     無償化
+     ==================================================================== -->
+<h2 id="cta-from">2026年度から、無償化の対象が広がりました</h2>
+
+<p>ニュースでも取り上げられている高校の授業料無償化ですが、2026年度から内容が変わりました。通信制高校も対象です。</p>
+
+<p>主な変更点は3つです。</p>
+<ul>
+  <li><strong>2026年から、所得制限が撤廃されました。</strong></li>
+  <li><span class="marker">私立通信制の支給上限額が増えました。</span>年間<span class="marker">33万7,200円が上限になります。</span></li>
+  <li><strong>広域通信制高校も対象になりました。</strong>複数の都道府県から生徒を募集している学校のことで、これまで対象外でしたが、新たに含まれるようになりました。</li>
+</ul>
+<p>所得制限が撤廃されたことで、<strong>世帯の収入によって支給を受けられないということはなくなりました。</strong>通信制を選ぶご家庭にとって、経済的なハードルは以前より下がっていると言えます。</p>
+<p class="note">※地域によって違うので詳しくは自治体の発信をご確認ください。また、就学支援金の支給のタイミングは入学後になります。</p>
+
+<figure>
+  <img src="images/04-seido.png" alt="2026年から通信制高校の学費支援が広がります">
+  <div class="imgph">画像04：制度の変更3点（images/04-seido.png）</div>
+</figure>
+
+<h3><span class="marker">就学支援金の申請は「入学後」です。</span>ここを間違えないでください</h3>
+<p>就学支援金は、自動的に適用されるものではありません。<span class="marker">申請が必要です。</span></p>
+<p>そして<strong>申請するのは入学後</strong>です。入学前に手続きをするものではありません。</p>
+<ul>
+  <li><strong>4月入学の場合</strong>：入学後の4月中（学校が定める期日まで）に申請します。学校から案内があります。</li>
+  <li><strong>転入の場合</strong>：転籍後2〜3か月後に案内があるのが一般的です。</li>
+  <li><strong>在学中</strong>：受給資格の確認手続きがあります。時期や方法は学校から案内があります。</li>
+</ul>
+<p>申請は文部科学省のオンラインシステム（e-Shien）から行うのが基本ですが、<strong>都道府県や学校によって方法が異なります</strong>（紙での申請のみを受け付けている学校もあります）。学校から配られる<strong>「ログインID通知書」</strong>（IDとパスワードが記載されています）が必要になるので、案内が届いたら早めに手続きを進めてください。</p>
+<p>どこまでが支援の対象になるかは、学校やコースによって変わります。<strong>入学を検討している学校に、事前に確認しておくと安心です。</strong></p>
+
+<figure>
+  <img src="images/05-shinsei.png" alt="就学支援金の申請は入学後です">
+  <div class="imgph">画像05：申請の流れ（images/05-shinsei.png）</div>
+</figure>
+
+
+<!-- ====================================================================
+     不安解消（生徒数・満足度）
+     ==================================================================== -->
+<h2>「通信制で本当に大丈夫か」と感じる方へ</h2>
+
+<p>私たち親の世代には、通信制高校は身近な選択肢ではありませんでした。<br>そのため「本当に大丈夫だろうか」と心配になる方は少なくありません。</p>
+<p>ただ、状況は大きく変わっています。</p>
+<p>通信制高校に通う生徒は<strong>2025年度に30万人を超え、過去最高を更新しました。今では高校生の約10人に1人</strong>が通信制課程の生徒です。少子化で高校生全体の数が減り続けているにもかかわらず、<strong>この10年で約1.7倍</strong>に増えています。</p>
+<p class="note">※文部科学省「学校基本調査」による。</p>
+
+<figure>
+  <img src="images/06-seitosu.png" alt="通信制高校の生徒数は年々増加しています">
+  <div class="imgph">画像06：生徒数の推移（images/06-seitosu.png）</div>
+</figure>
+
+<p>実際に通っている生徒の声も出ています。株式会社プレマシードの調査では、<strong>通信制高校の生徒の84%以上が「入ってよかった」と回答</strong>しています。また同社の別の調査では、10代の6割が通信制高校に良いイメージを持っているという結果も出ています。</p>
+<p class="note">※株式会社プレマシードの調査による。</p>
+
+
+<!-- ====================================================================
+     全日制との違い
+     ==================================================================== -->
+<h2>全日制と通信制は、何が違うのか</h2>
+
+<div class="tw">
+<table>
+  <tr><th></th><th>全日制</th><th>通信制</th></tr>
+  <tr><th>学習の進め方</th><td>毎日登校し、クラスで授業を受ける</td><td>レポート提出・スクーリング・試験で単位を取る</td></tr>
+  <tr><th>課程</th><td>学年制が中心</td><td>単位制が中心</td></tr>
+  <tr><th>通学</th><td>基本的に毎日</td><td>学校・コースにより異なる</td></tr>
+  <tr><th>得られる資格</th><td>高等学校卒業資格</td><td>高等学校卒業資格（同じ）</td></tr>
+</table>
+</div>
+
+<p>大きな違いは、<strong>単位の取り方</strong>です。</p>
+<p>全日制は毎日通うことが前提で、出席日数が単位に関わります。一方の通信制は、レポートの提出とスクーリング（面接指導）、そして試験によって単位を積み上げていきます。<br><span class="marker">自分のペースで学習を進めやすい</span>のが特徴です。</p>
+<p>なお、<strong>通信制でも登校はあります。</strong>スクーリングは卒業に必要な要件で、登校がまったくない学校はありません。ただし年に数日程度で済む学校から、週5日通えるコースがある学校まで、幅は非常に大きくなっています。</p>
+<p class="note">※通学日数は学校ごとに異なります。詳細は学校にお問い合わせください。</p>
+<p>そして卒業して得られるのは、全日制と<strong>同じ「高等学校卒業資格」</strong>です。卒業証書に課程の違いは影響しません。</p>
+
+<figure>
+  <img src="images/07-tani.png" alt="学び方は違っても得られるのは同じ高等学校卒業資格">
+  <div class="imgph">画像07：単位の取り方の違い（images/07-tani.png）</div>
+</figure>
+
+
+<!-- ====================================================================
+     卒業後の進路
+     ==================================================================== -->
+<h2>卒業したあと、みんなどうしているのか</h2>
+
+<p>「通信制に行くと、進学や就職で不利になるのではないか」</p>
+<p>保護者の方から、最もよく聞かれる心配です。実際の数字を見てみます。</p>
+
+<figure>
+  <img src="images/09-shinro.png" alt="通信制高校の卒業生の多くが大学・専門学校・就職など進路が決定しています">
+  <div class="imgph">画像09：卒業後の進路（images/09-shinro.png）</div>
+</figure>
+
+<p>大学に進学した人が<strong>28.7%</strong>、専修学校（専門課程）に進学した人が<strong>25.1%</strong>。合わせて<strong>53.8%</strong>で、<span class="marker">卒業生の半数以上が進学しています。</span>就職した人を加えると、7割を超えます。</p>
+<p>変化が大きいのは大学進学です。大学に進学した人数は、<span class="marker">この5年で約2.5倍</span>になりました。<br>令和5年度には、大学への進学者数が専門学校への進学者数を初めて上回っています。</p>
+<p>一方で、進学も就職もしていない「その他」が<strong>26.7%</strong>あります。ここには進学準備や家事手伝い、就職活動を続けている人などが含まれますが、内訳までは分かりません。<strong>卒業の時点で次が決まっていない人が、4人に1人ほどいる</strong>ということです。</p>
+<p>ただし、これは全国の平均です。<strong>進路の実績は、学校によってかなり違います。</strong>大学進学に力を入れている学校もあれば、専門分野の技能を伸ばすことを重視している学校もあります。</p>
+<p>お子様がどんな進路を考えているかによって、選ぶべき学校は変わります。<strong>ここも、資料を取り寄せて比べておきたいところです。</strong></p>
+<p class="note">※文部科学省「学校基本調査」より。2024年度卒業者。四捨五入のため合計が100%にならない場合があります。</p>
+
+
+<!-- ====================================================================
+     好きなことを学べる
+     ==================================================================== -->
+<h2>好きなことを、学びの真ん中に置ける</h2>
+
+<p>通信制高校を選ぶ理由は、「毎日通うのが難しいから」だけではありません。</p>
+<p>自分のペースで学習を進められるということは、<strong>空いた時間を好きなことに使える</strong>ということでもあります。実際に、専門分野を学べるコースを用意している学校が増えています。</p>
+
+<figure>
+  <img src="images/08-bunya.png" alt="美容・アニメ・プログラミング・芸能・語学・音楽を学べる通信制高校">
+  <div class="imgph">画像08：学べる6分野（images/08-bunya.png）</div>
+</figure>
+
+<p>お子様が夢中になっているものは、この中にありませんか。</p>
+<p>好きなことがはっきりしている子ほど、それを高校で学べると知ったときの反応は違います。<br><strong>「高校に行きたくない」が「この高校なら行ってみたい」に変わることもあります。</strong></p>
+<p class="note">※学べる分野やコースは学校によって異なります。詳細は学校にお問い合わせください。</p>
+
+
+<!-- ====================================================================
+     結び
+     ==================================================================== -->
+<h2 id="closing">親にできるのは、環境を用意することだけ</h2>
+
+<blockquote style="border-left:4px solid var(--pink); padding:6px 0 6px 20px; margin:0 0 22px;">
+  <p style="font-size:19px; font-weight:700; line-height:1.8; margin:0 0 8px;">之を知る者は之を好む者に如かず。<br>之を好む者は之を楽しむ者に如かず。</p>
+  <p style="font-size:13px; color:var(--ink-sub); margin:0;">『論語』雍也第六</p>
+</blockquote>
+
+<p>知っているだけの人は、それを好きな人にはかなわない。<br>好きな人も、それを楽しんでいる人にはかなわない。<br>2500年前の孔子の言葉です。</p>
+<p>子どもが何かに夢中になっているとき、私たち大人が教えられることはもう多くありません。<br><strong>本人が楽しんで進んでいくほうが、ずっと速い</strong>からです。</p>
+<p>結局のところ、私たち親にできるのは、<span class="marker">子どもに合った環境を用意してあげることだけ</span>なのだと思います。</p>
+<p>楽しんで学んでいくなかで、社会に価値を提供する術が身についていく。そしてその価値によって、自分の生活を立てられるようになる。<br><strong>もしそんなふうになってくれたら、親としてこれ以上に喜ばしいことはない</strong>と、私は思います。</p>
+<p>通信制高校は、<strong>全国に300校以上</strong>あります。<br>学費も、通学の頻度も、学べる内容も、学校によってまったく違います。</p>
+<p id="pre-cta">そのなかから、お子様に合う学校を一つひとつ調べていくのは、正直かなり大変です。</p>
+
+
+<!-- ====================================================================
+     CTA
+     ▼ここを差し替える④ ASPから発行されたURLに置き換える
+     ==================================================================== -->
+<div class="cta">
+  <p><strong>やりたいこと・通学の頻度・お住まいの地域から、条件に合う通信制高校を探して、<br>まとめて資料請求できるサービスがあります。</strong></p>
+  <p>費用はかかりません。まずは何校か資料を取り寄せて、学費や通学スタイルを比べてみることから始めてみてください。</p>
+  <a href="https://ad-fam.com/ad/p/r?_site=49717&amp;_article=16463" class="cta-btn" data-cta="main" rel="sponsored nofollow"><span class="cta-badge">カンタン60秒</span>無料で人気校の資料を請求する</a>
+  <p class="cta-sub">※資料請求後、学校から連絡が入る場合があります。気になる点は、その際に直接ご確認いただけます。</p>
+</div>
+
+<!-- 信頼要素（CTA直下） -->
+<div class="trust">
+  <p class="trust-t">運営元について</p>
+  <p>ご紹介しているサービス「<strong>ズバット通信制高校比較</strong>」は、<strong>株式会社ウェブクルー</strong>が運営しています。</p>
+  <p>これまでに<strong>15万人以上</strong>が利用しています<span style="font-size:12px;">（※2023年4月現在）</span>。</p>
+  <p>同社は、お客様から取得する個人情報を含むすべての情報について、情報セキュリティの国際規格<strong>「ISO27001（ISMS）」の認証を取得</strong>し、それに基づく管理を行っています。</p>
+  <p class="trust-note">お子様の進路にかかわる情報をお預けいただくことになるため、気になる方も多い点だと思い、記載させていただきました。<br><strong>資料請求に費用はかかりません。</strong></p>
+</div>
+
+<footer>
+  <p>本記事は文部科学省「学校基本調査」および同省が公表する高等学校等就学支援金制度の資料をもとに作成しています。制度の内容は変更される場合があります。最新の情報は文部科学省および各自治体の発信をご確認ください。</p>
+
+  <p class="flinks">
+    <a href="privacy.html">運営者情報・プライバシーポリシー</a>
+  </p>
+</footer>
+
+</div><!-- /.wrap -->
+
+
+<!-- 画像の拡大表示 -->
+<div id="lightbox">
+  <button class="lbclose" aria-label="閉じる">×</button>
+  <img src="" alt="">
+  <p class="lbhint">画面をタップで閉じる／指を広げてさらに拡大できます</p>
+</div>
+
+<!-- 追従CTA（スマホのみ） -->
+<div id="fixcta">
+  <a href="https://ad-fam.com/ad/p/r?_site=49717&amp;_article=16463" data-cta="fixed" rel="sponsored nofollow"><span class="cta-badge">カンタン60秒</span>無料で人気校の資料を請求する</a>
+</div>
+
+
+<script>
+/* ======================================================================
+   計測スクリプト（触らなくてOK）
+   ・CTAクリックを GA4 と Google広告 の両方に送信
+   ・スクロール到達率を GA4 に送信（25/50/75/100%）
+   ・追従CTAの出し入れ
+   ====================================================================== */
+(function(){
+  'use strict';
+
+  /* ------------------------------------------------------------------
+     famAD タグ発火向上：URLパラメータをASPリンクへ引き継ぐ
+     広告クリックで付く gclid 等を ad-fam.com のリンクに渡します。
+     これが無いと成果とクリックが紐づかず、Google広告に実CVを戻せません。
+     ※ASPリンクは各<a>のhrefに直接記述済み（▼ここを差し替える④）
+     ------------------------------------------------------------------ */
+  (function(){
+    var prm = location.search;              // 例: "?gclid=xxx&utm_source=yyy"
+    if (!prm || prm.length < 2) return;
+    var query = prm.slice(1);               // 先頭の "?" を外す
+    document.querySelectorAll('a[href*="ad-fam.com"]').forEach(function(a){
+      var href = a.getAttribute('href');
+      if (!href || href.indexOf(query) > -1) return;   // 二重付与を防ぐ
+      a.setAttribute('href', href + (href.indexOf('?') > -1 ? '&' : '?') + query);
+    });
+  })();
+
+  // CTAのhrefを一括設定
+  // ---- CTAクリック計測 ----
+  document.querySelectorAll('[data-cta]').forEach(function(el){
+    el.addEventListener('click', function(){
+      var place = el.getAttribute('data-cta'); // main / fixed
+
+      // GA4: どのCTAが押されたか
+      if (typeof gtag === 'function') {
+        gtag('event', 'cta_click', {
+          cta_position: place,
+          page_title: document.title
+        });
+
+        // Google広告: 疑似コンバージョン（スマート入札の学習用）
+        if (MEASURE.ADS_ID.indexOf('X') === -1) {
+          gtag('event', 'conversion', {
+            send_to: MEASURE.ADS_ID + '/' + MEASURE.ADS_LABEL
+          });
+        }
+      }
+
+      // Clarity: このセッションにタグを付けて絞り込めるようにする
+      if (typeof clarity === 'function') clarity('set', 'cta_clicked', place);
+    });
+  });
+
+  // ---- スクロール到達率 ----
+  var marks = [25,50,75,100], fired = {};
+  window.addEventListener('scroll', function(){
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    if (h <= 0) return;
+    var pct = Math.round(window.scrollY / h * 100);
+    marks.forEach(function(m){
+      if (pct >= m && !fired[m]) {
+        fired[m] = true;
+        if (typeof gtag === 'function') gtag('event', 'scroll_depth', {percent: m});
+      }
+    });
+  }, {passive:true});
+
+  // ---- 画像が無いときだけプレースホルダを表示 ----
+  document.querySelectorAll('figure img').forEach(function(img){
+    img.addEventListener('error', function(){
+      img.style.display = 'none';
+      var ph = img.nextElementSibling;
+      if (ph && ph.classList.contains('imgph')) ph.style.display = 'block';
+    });
+  });
+
+  // ---- CTAボタン：画面に入ったら1回だけ跳ねる ----
+  var mainBtn = document.querySelector('.cta-btn');
+  if (mainBtn && 'IntersectionObserver' in window) {
+    var bo = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) { e.target.classList.add('pop'); bo.unobserve(e.target); }
+      });
+    }, {threshold: 0.8});
+    bo.observe(mainBtn);
+  }
+
+  // ---- マーカー：画面に入ったら下線を引く ----
+  if ('IntersectionObserver' in window) {
+    var mo = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) {
+          e.target.classList.add('drawn');
+          mo.unobserve(e.target);
+        }
+      });
+    }, {threshold: 0.6, rootMargin: '0px 0px -10% 0px'});
+    document.querySelectorAll('.marker').forEach(function(el){ mo.observe(el); });
+  } else {
+    document.querySelectorAll('.marker').forEach(function(el){ el.classList.add('drawn'); });
+  }
+
+  // ---- 画像をタップ／クリックで拡大 ----
+  var lb = document.getElementById('lightbox');
+  var lbImg = lb.querySelector('img');
+  document.querySelectorAll('figure img').forEach(function(img){
+    img.addEventListener('click', function(){
+      lbImg.src = img.currentSrc || img.src;
+      lbImg.alt = img.alt;
+      lb.classList.add('on');
+      document.body.style.overflow = 'hidden';
+      if (typeof gtag === 'function') gtag('event', 'image_zoom', {image: img.getAttribute('src')});
+    });
+  });
+  function closeLb(){ lb.classList.remove('on'); document.body.style.overflow = ''; }
+  lb.addEventListener('click', closeLb);
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeLb(); });
+
+  // ---- 追従CTA ----
+  // 表示する区間：「2026年度から、無償化の対象が広がりました」に到達
+  //             〜「正直かなり大変です。」が見え始める直前まで
+  // それ以降（本体CTAが見えている間・ページ末尾）は非表示にして重複を防ぐ
+  var fix   = document.getElementById('fixcta');
+  var start = document.getElementById('cta-from');
+  var stop  = document.getElementById('pre-cta');
+
+  function topOf(el){
+    var t = 0;
+    while (el) { t += el.offsetTop; el = el.offsetParent; }
+    return t;
+  }
+
+  function updateFix(){
+    if (!fix || !start) return;
+    var vh     = window.innerHeight;
+    var bottom = window.scrollY + vh;          // 画面の下端
+    var from   = topOf(start);                 // ここに到達したら表示
+    var to     = stop ? topOf(stop) : Infinity; // ここが見え始めたら非表示
+    var show   = bottom > from && bottom < to;
+    fix.classList.toggle('on', show);
+  }
+
+  window.addEventListener('scroll', updateFix, {passive:true});
+  window.addEventListener('resize', updateFix);
+  window.addEventListener('load', updateFix);
+  updateFix();
+})();
+</script>
+
+</body>
+</html>
