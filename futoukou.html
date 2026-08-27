@@ -177,6 +177,16 @@ td.num{white-space:nowrap; font-variant-numeric:tabular-nums;}
   font-size:18px;
 }
 
+/* 後悔の声（顔つき吹き出し） */
+.voices{margin:0 0 22px;}
+.voice{display:flex; gap:12px; align-items:flex-start; margin-bottom:14px;}
+.voice:last-child{margin-bottom:0;}
+.voice-face{width:54px; height:54px; flex:0 0 auto; border-radius:50%; overflow:hidden; background:#F0F0F0; border:2px solid #fff; box-shadow:0 1px 5px rgba(0,0,0,.15);}
+.voice-face img{width:100%; height:100%; object-fit:cover; display:block;}
+.voice-bubble{position:relative; background:var(--yellow-bg); border:1px solid #EFE0B0; border-radius:12px; padding:12px 15px; margin:0; font-size:15px; font-weight:700; line-height:1.65; color:var(--ink);}
+.voice-bubble::before{content:""; position:absolute; left:-9px; top:17px; border-style:solid; border-width:7px 9px 7px 0; border-color:transparent #EFE0B0 transparent transparent;}
+.voice-bubble::after{content:""; position:absolute; left:-7px; top:18px; border-style:solid; border-width:6px 8px 6px 0; border-color:transparent var(--yellow-bg) transparent transparent;}
+
 /* 問いかけの見出しバー（ピンク） */
 .qbar{
   background:var(--pink); color:#fff; font-weight:800;
@@ -231,6 +241,9 @@ h2.qbar{border-left:none; font-size:20px; margin:52px 0 20px;}
 @keyframes cue-bounce{0%,100%{transform:translateY(0);} 50%{transform:translateY(7px);}}
 @media (prefers-reduced-motion:reduce){.scroll-cue svg{animation:none;}}
 .ul{font-weight:700; text-decoration:underline; text-underline-offset:3px;}
+.red{color:#e60000; font-weight:700;}
+.blue{color:#2b8cd9; font-weight:700;}
+.marker.pink{background-image:linear-gradient(transparent 58%, #F9C7D6 58%);}
 .cite{font-size:12px; color:var(--ink-sub);}
 .cta{
   background:var(--teal-bg); border:2px solid var(--teal); border-radius:12px;
@@ -304,6 +317,7 @@ h2.qbar{border-left:none; font-size:20px; margin:52px 0 20px;}
 
 /* 追従CTA（スマホのみ・スクロール後に出現） */
 #fixcta{
+  display:none; /* ★追従CTAを一旦非表示。復活させるにはこの display:none の行を削除するだけ */
   position:fixed; left:0; right:0; bottom:0; z-index:100; padding:10px 14px;
   background:rgba(255,255,255,.96); border-top:1px solid var(--line);
   transform:translateY(120%); transition:transform .3s ease;
@@ -333,74 +347,86 @@ footer{margin-top:60px; padding-top:24px; border-top:1px solid var(--line); font
      導入
      ==================================================================== -->
 <figure>
-  <img src="images/futoukou/01-futoukou-hero.png" alt="不登校経験者向け 失敗しない通信制高校・サポート校6選 2026年版">
+  <img src="images/futoukou/01-futoukou-hero_2.png" alt="不登校経験者向け 失敗しない通信制高校・サポート校6選 2026年版">
   <div class="imgph">FV画像（images/futoukou/01-futoukou-hero.png）</div>
 </figure>
 
-<p>子供が不登校になると、大きく不安を抱えますよね。</p>
+<p>子供が不登校になると、大きく不安を抱えますよね⋯</p>
 
 <ul class="zabuton">
   <li>今日も学校にいかなかった⋯</li>
   <li>何を聞いても、何も応えてくれない</li>
-  <li>子どもの将来を考えると…絶望する日々⋯</li>
+  <li>子どもの将来を考えると…<strong class="red">絶望する日々</strong>⋯</li>
 </ul>
 
-<p><strong>「不登校の子でも通える高校を探してあげたい」</strong></p>
+<p><strong>「不登校のうちの子でも通える高校を探してあげたい」</strong></p>
 <p>そう思ってネットで情報収集をしていませんか？</p>
 
 <div class="bubbles">
   <p class="bubble">家から近いからここでいいかな</p>
-  <p class="bubble">学費がやすいからここでいいかな</p>
+  <p class="bubble">学費が安いからここでいいかな</p>
 </div>
 
-<p class="qbar">その学校選び、"なんとなく"で決めていませんか？</p>
+<p>その探し方、<strong class="red">かなり危険</strong>です。</p>
 
-<p>その探し方、<strong class="hl">かなり危険</strong>です。</p>
+<p class="qbar">よくある“ミスマッチ”の後悔</p>
 
-<p>ネットやパンフレットには、<strong>"実際とはちがう"通信制高校・サポート校の情報</strong>が、たくさん出回っているからです。</p>
+<p>通信制高校で後悔する一番の原因は、じつは<strong>学校の良し悪しではありません</strong>。<br><strong>「自分の希望」と「学校の特色」が合っていなかった</strong>——いわゆる“ミスマッチ”です。</p>
 
-<p class="qbar">なぜ、"良さそうに見える"学校で後悔するのか？</p>
-
-<p>理由はシンプルです。一部の学校が、生徒を集めるために、パンフや説明会で<strong>"良いところ"だけを大きく見せている</strong>からです。</p>
-
-<p>少子化でも通信制に通う生徒は増え続け、今では高校生の約10人に1人。学校どうしの競争も激しくなっています。ありのままを正直に伝えると選ばれにくいため、どうしても表現が"盛られ"がちになります。</p>
-
-<p>だから、<span class="marker">「自分のペースで」「一人ひとりに寄り添う」といった耳ざわりのいい言葉ほど、入学後の実態とズレている</span>ことがあります。</p>
-
-<p>実際には、こんな「オモテ」と「ウラ」があります。</p>
+<div class="scroll-cue" aria-hidden="true">
+  <svg width="44" height="34" viewBox="0 0 44 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M8 7 L22 19 L36 7" stroke="#9AA0A6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M8 16 L22 28 L36 16" stroke="#9AA0A6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</div>
 
 <figure>
-  <img src="images/futoukou/02-futoukou-uraomote_hikaku.png" alt="通信制高校のパンフで言われること（オモテ）と入学後の実態（ウラ）の比較">
-  <div class="imgph">裏表 対比表（images/futoukou/02-futoukou-uraomote_hikaku.png）</div>
+  <img src="images/futoukou/06-futoukou-mismatch-4koma.png" alt="家から近いという理由だけで週3コースを選び、自分に合わず後悔する中学生の4コマ漫画">
+  <div class="imgph">4コマ漫画（images/futoukou/06-futoukou-mismatch-4koma.png）</div>
 </figure>
 
-<p class="qbar">なぜこうなるのか・・？</p>
+<div class="voices">
+  <div class="voice">
+    <div class="voice-face"><img src="images/futoukou/07-voice-01.png" alt=""></div>
+    <p class="voice-bubble">ネットの情報だけで決めたけど、入学したら印象が全然違った…</p>
+  </div>
+  <div class="voice">
+    <div class="voice-face"><img src="images/futoukou/07-voice-02.png" alt=""></div>
+    <p class="voice-bubble">1校しか資料を取らなかった。他と比べれば、もっと合う学校があったかも…</p>
+  </div>
+  <div class="voice">
+    <div class="voice-face"><img src="images/futoukou/07-voice-03.png" alt=""></div>
+    <p class="voice-bubble">適当に普通コースに入ったけど、自分の興味は美容の専門コースだった⋯</p>
+  </div>
+</div>
 
-<p>その主な原因は、生徒が集まらず定員割れしている学校は、<span class="marker">条件をよく見せないと応募が集まらない</span>からです👇</p>
-
-<figure>
-  <img src="images/futoukou/03-futoukou-4koma.png" alt="生徒が集まらない学校が条件をよく見せて生徒を集める仕組みを描いた4コマ漫画">
-  <div class="imgph">4コマ漫画（images/futoukou/03-futoukou-4koma.png）</div>
-</figure>
+<p><br>こうした後悔の多くは、<span class="marker">“もっと調べていれば”防げた</span>ものです。<br><br>家からの距離やイメージだけで決めず、<strong>通学ペース・コース・サポート</strong>まで見比べておくことが、後悔しない選び方につながります。</p>
 
 
 <!-- ====================================================================
      失敗しない選び方（3軸）
      ==================================================================== -->
-<p>生徒を集めたい学校ほど、パンフや広告では"良い面"だけが強調されます。その仕組みを知らずに「なんとなく良さそう」で決めてしまうと、"こんなはずじゃなかった"につながります。</p>
+<p>とはいえ、通信制・サポート校は<strong>学校ごとに特色がまったく違います</strong>。だからこそ、自分に合うかを見極めるポイントを知っておくことが大切です。</p>
 
-<p>でも裏を返せば——<strong>選ぶ側が「見るべきポイント」を知っていれば、盛られた言葉に惑わされず、本当に合う学校を見抜けます。</strong></p>
+<p>次の<span class="marker pink">3つ</span>を押さえれば、<strong>ミスマッチはぐっと減らせます</strong>。</p>
 
-<h2 id="cta-from" class="qbar">不登校からの学校選びで、失敗しないための3つのポイント</h2>
+<div class="scroll-cue" aria-hidden="true">
+  <svg width="44" height="34" viewBox="0 0 44 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M8 7 L22 19 L36 7" stroke="#9AA0A6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M8 16 L22 28 L36 16" stroke="#9AA0A6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</div>
+
+<h2 id="cta-from" class="qbar">通信制高校選びで、失敗しないための3つのポイント</h2>
 
 <p>不登校のお子さんの場合、何より大切なのは<strong>「無理なく通い続けられるか」</strong>です。次の3つを必ず確認してください。</p>
 
 <div class="point-cards">
   <div class="point-card">
-    <div class="point-icon">🏛️</div>
+    <div class="point-icon">📖</div>
     <div class="point-body">
-      <p class="point-title"><span class="num">①</span>運営が「大手の教育グループ」か</p>
-      <p class="point-desc">急な閉校のリスクが低く、サポートや進路の体制も整っています。実態のつかめない学校は、候補から外してOK。</p>
+      <p class="point-title"><span class="num">①</span>HPだけで決めず、パンフレットも見たか</p>
+      <p class="point-desc">HPには載せきれない情報がパンフレットにはたくさん載っています。またキャンパスごとの違いもなかなかHPには載っていないことが多いです。</p>
     </div>
   </div>
   <div class="point-card">
@@ -419,13 +445,18 @@ footer{margin-top:60px; padding-top:24px; border-top:1px solid var(--line); font
   </div>
 </div>
 
-<p>——この3つを、<strong>すべて満たす学校</strong>をご紹介します。</p>
-
 
 <!-- ====================================================================
      この6校が安心
      ==================================================================== -->
-<h2 id="closing" class="qbar">この6校なら、安心して資料請求できます</h2>
+<div class="scroll-cue" aria-hidden="true">
+  <svg width="44" height="34" viewBox="0 0 44 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M8 7 L22 19 L36 7" stroke="#9AA0A6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M8 16 L22 28 L36 16" stroke="#9AA0A6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</div>
+
+<h2 id="closing" class="qbar">人気の学校6選</h2>
 
 <p>ご紹介するのは、<strong>いずれも名の知れた大手教育グループが運営</strong>し、<strong>通学スタイルを選べて、サポートの中身も具体的</strong>な通信制高校・サポート校です。</p>
 
@@ -443,9 +474,9 @@ footer{margin-top:60px; padding-top:24px; border-top:1px solid var(--line); font
       </div>
     </div>
     <ul>
-      <li><strong>全国に100ヶ所以上のキャンパス</strong>があり、お住まいの地域を問わず選択肢に入ります</li>
-      <li>ネットコースのほか、週5日・週3日・週1日＋のコースから選べます</li>
-      <li>在籍数は3万人を超えています</li>
+      <li>3万人突破、高校生の100人に一人がN高生！</li>
+      <li>全国にある100ヶ所以上のキャンパス</li>
+      <li>ネットコース、週5・週3・週1＋コースから選べる</li>
     </ul>
   </div>
 
@@ -459,8 +490,9 @@ footer{margin-top:60px; padding-top:24px; border-top:1px solid var(--line); font
       </div>
     </div>
     <ul>
-      <li>通信制高校・サポート校で<strong>全国No.1の大学進学率</strong><span class="src">※在籍生徒数3,500名以上の通信制高校・サポート校において進学率全国1位。2023年3月23日 産経メディックス調べ。</span></li>
-      <li>体調に合わせて受講スタイルをいつでも変更できます</li>
+      <li>通信制高校・サポート校で、全国No.1<sup>*</sup>の大学進学率！</li>
+      <li>体調に合わせて受講スタイルをいつでも変更できる</li>
+      <li><span class="src">*在籍生徒数3,500名以上の通信制高校・サポート校において進学率全国1位。2023/3/23 産経メディックス調べ。</span></li>
     </ul>
   </div>
 
@@ -474,9 +506,9 @@ footer{margin-top:60px; padding-top:24px; border-top:1px solid var(--line); font
       </div>
     </div>
     <ul>
-      <li>自分に合った通学スタイルが選べて、服装も自由</li>
-      <li>多彩な専門分野が学べて、自分の「好き」が見つかります</li>
-      <li>豊富な学校行事があります</li>
+      <li>自分に合った通学スタイルが選べて、服装も自由！</li>
+      <li>多彩な専門分野が学べて、自分の「好き」が見つかる</li>
+      <li>豊富な学校行事で友達と一緒に思い出作り</li>
     </ul>
   </div>
 
@@ -490,9 +522,9 @@ footer{margin-top:60px; padding-top:24px; border-top:1px solid var(--line); font
       </div>
     </div>
     <ul>
-      <li>教育理念は「1／1（いちぶんのいち）の教育」</li>
+      <li>教育理念「1／1（いちぶんのいち）の教育」</li>
       <li>自分のペースで通える、安心できる高校生活</li>
-      <li>「成長実感型教育」を掲げています</li>
+      <li>「成長実感型教育」で自分を今よりも好きになる！</li>
     </ul>
   </div>
 
@@ -506,9 +538,9 @@ footer{margin-top:60px; padding-top:24px; border-top:1px solid var(--line); font
       </div>
     </div>
     <ul>
-      <li>「なりたい大人になるための学校。<sup>&reg;</sup>」を掲げています</li>
-      <li>先生＝マイコーチ<sup>&reg;</sup>が寄り添います</li>
-      <li>屋久島スクーリングがあります</li>
+      <li>なりたい大人になるための学校。<sup>&reg;</sup></li>
+      <li>先生＝マイコーチ<sup>&reg;</sup>が寄り添い共に歩む</li>
+      <li>屋久島スクーリングで人や自然とつながる！</li>
     </ul>
   </div>
 
@@ -522,25 +554,21 @@ footer{margin-top:60px; padding-top:24px; border-top:1px solid var(--line); font
       </div>
     </div>
     <ul>
-      <li>通信教育大手ベネッセのノウハウを活かした指導</li>
+      <li>通信教育大手ベネッセのノウハウを凝縮</li>
       <li>クラス担任と「赤ペンメンター」のWサポート制度</li>
-      <li>総合型選抜に対応しています</li>
+      <li>総合型選抜でやりたいことを叶えられる！</li>
     </ul>
   </div>
 
 </div>
 
-<p>どの学校が合うかは、お子さんの状態やご家庭の事情によって変わります。<br><strong>だからこそ、1校だけで決めず、気になった学校をまとめて見比べるのが確実です。</strong></p>
+<p>どの学校が合うかは、お子さんの状態やご家庭の事情によります。<br><strong>1校だけで決めず、まとめて見比べる</strong>のが確実です。</p>
 
-<p id="pre-cta">とはいえ、気になる学校をひとつずつ調べて、それぞれに問い合わせていくのは、正直かなり大変です。</p>
+<p id="pre-cta">とはいえ、1校ずつ調べて問い合わせるのは、正直かなり大変。<br>そんなときに役立つのが<span class="marker">「ズバット通信制高校比較」</span>です。</p>
 
-<p>そんなときに役立つのが、<span class="marker">「ズバット通信制高校比較」</span>です。</p>
+<p>地域や「<strong>通学のペース</strong>」「<strong>サポート</strong>」「<strong>進学</strong>」などの条件を選ぶだけで、<strong>〈安心の6校〉からまとめて資料請求</strong>できます。</p>
 
-<p>お住まいの地域や「<strong>通学のペース</strong>」「<strong>サポートの手厚さ</strong>」「<strong>進学に強い学校がいい</strong>」といった希望条件を選ぶだけで、<strong>先程の〈安心して紹介できる6校〉</strong>の中から、条件に合った通信制高校を自動でピックアップ。<br><strong>【完全無料・まとめて一括】</strong>で資料を取り寄せられます。</p>
-
-<p>1校ずつ調べる手間はかかりません。<strong>条件を選ぶだけで、まとめて比較できます。</strong><br></p>
-
-<p class="textlink-wrap"><a href="https://ad-fam.com/ad/p/r?_site=49717&amp;_article=16463" class="textlink" data-cta="text-top" rel="sponsored nofollow">「ズバット通信制高校比較」で資料を取り寄せる</a></p>
+<p class="textlink-wrap"><a href="https://ad-fam.com/ad/p/r?_site=49717&amp;_article=16463" class="textlink" data-cta="text-top" rel="sponsored nofollow">【完全無料・まとめて一括】<br>「ズバット通信制高校比較」で資料を取り寄せる</a></p>
 
 <div class="scroll-cue" aria-hidden="true">
   <svg width="44" height="34" viewBox="0 0 44 34" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -549,23 +577,23 @@ footer{margin-top:60px; padding-top:24px; border-top:1px solid var(--line); font
   </svg>
 </div>
 
-<p class="qbar">実は、よい学校・コースほど早いもの勝ち</p>
+<p class="qbar">実は、もう時間がありません</p>
 
-<p>そして、早いもので<strong>もう夏も終わり</strong>。<br><br>中学3年生なら、<span class="marker">秋から冬にかけて、進路を決める三者面談</span>が控えています。<br>それまでに、お子さんに合う学校を絞り込んでおきたい時期です。</p>
+<p>そして、早いもので<strong>もう夏も終わり</strong>。<br><br><span class="marker">9月には、多くの通信制高校で出願が始まります</span>。<br><strong class="red">今すぐに、資料請求をして学校を比較する必要があります。</strong></p>
 
 <figure>
   <picture>
     <source media="(max-width:767px)" srcset="images/futoukou/04-futoukou-schedule-sp.png">
-    <img src="images/futoukou/04-futoukou-schedule-pc.png" alt="中3の進路スケジュール。夏〜初秋に情報収集、秋に学校説明会・見学、冬に三者面談で進路決定、1〜4月に出願・入学">
+    <img src="images/futoukou/04-futoukou-schedule-pc.png" alt="中3の進路スケジュール。今〜夏に情報収集・資料請求、9〜10月に出願、11〜12月に入試、4月に入学">
   </picture>
   <div class="imgph">中3の進路スケジュール（images/futoukou/04-futoukou-schedule-pc.png）</div>
 </figure>
 
-<p>今や、<strong>毎年およそ29万人</strong>が通うようになった通信制高校。<span class="cite">※文部科学省「学校基本調査」（令和6年度）</span></p>
+<p>今や、<strong>毎年およそ31万人</strong>が通うようになった通信制高校。<span class="cite">※文部科学省「学校基本調査」（令和8年度速報値）</span></p>
 
-<p>人気のコースや学校には応募が殺到し、<strong class="ul">「定員オーバー」</strong>になる可能性もあるので、早めの資料請求をお勧めします。</p>
+<p>人気のコースや学校には応募が殺到し、<strong class="red">「定員オーバー」</strong>になる可能性もあるので、早めの資料請求をお勧めします。</p>
 
-<p>わたしたち親が与えてあげられるのは、<strong class="ul">「未来への選択肢」</strong>くらいしかありません。<br>選択肢が多いうちに、選べる今が、資料請求のタイミングです。</p>
+<p>わたしたち親が与えてあげられるのは、<span class="marker">「未来への選択肢」</span>くらいしかありません。<br>選択肢が多いうちに、選べる今が、資料請求のタイミングです。</p>
 
 
 <!-- ====================================================================
@@ -584,7 +612,7 @@ footer{margin-top:60px; padding-top:24px; border-top:1px solid var(--line); font
 <div class="trust">
   <p class="trust-t">運営元について</p>
   <p>ご紹介しているサービス「<strong>ズバット通信制高校比較</strong>」は、<strong>株式会社ウェブクルー</strong>が運営しています。</p>
-  <p>これまでに<strong>15万人以上</strong>が利用しています<span style="font-size:12px;">（※2023年4月現在）</span>。</p>
+  <p>これまでに<strong>20万人以上</strong>が利用しています<span style="font-size:12px;">（※2025年10月現在）</span>。</p>
   <p>同社は、お客様から取得する個人情報を含むすべての情報について、情報セキュリティの国際規格<strong>「ISO27001（ISMS）」の認証を取得</strong>し、それに基づく管理を行っています。</p>
   <p class="trust-note">お子様の進路にかかわる情報をお預けいただくことになるため、気になる方も多い点だと思い、記載させていただきました。<br><strong>資料請求に費用はかかりません。</strong></p>
 </div>
