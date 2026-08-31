@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ======================================================================
+     ▼ここを差し替える① ページ情報
+     ====================================================================== -->
+<title>不登校からの通信制高校・サポート校えらび｜失敗しない選び方と人気の6校【2026年版】</title>
+<meta name="description" content="不登校からの高校選びで後悔しないために。よくあるミスマッチ、失敗しない選び方、人気の6校をまとめました。">
+<meta name="robots" content="noindex"><!-- 広告専用LP。検索インデックスは index.html のみに集約 -->
+
+<!-- ======================================================================
+     ▼ここを差し替える② 計測タグの設定値
+     取得したらこの3つを書き換えるだけでOK
+     ====================================================================== -->
+<script>
+  const MEASURE = {
+    GA4_ID:        'G-9M597GDE8J',      // GA4の測定ID
+    CLARITY_ID:    'y3sgntw5b4',        // Microsoft ClarityのプロジェクトID
+    ADS_ID:        'AW-18394699589',      // Google広告のコンバージョンID
+    ADS_LABEL:     'K2YBCNfCjOscEMWuo8NE' // Google広告のコンバージョンラベル
+  };
+</script>
+
+<!-- GA4 + Google広告（MEASUREの値だけ変えれば切り替わります） -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  (function(){
+    var ids = [MEASURE.GA4_ID, MEASURE.ADS_ID].filter(function(id){ return id.indexOf('X') === -1; });
+    if (!ids.length) return;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + ids[0];
+    document.head.appendChild(s);
+    ids.forEach(function(id){ gtag('config', id); });
+  })();
+</script>
+
+<!-- Microsoft Clarity（ヒートマップ・セッション録画） -->
+<script>
+  (function(c,l,a,r,i,t,y){
+    if (MEASURE.CLARITY_ID.indexOf('x') === 0) return; // 未設定なら読み込まない
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", MEASURE.CLARITY_ID);
+</script>
+
+<style>
+/* ======================================================================
+   ▼ここを差し替える③ 色・サイズ
+   この変数を変えるだけで全体のトーンが変わります
+   ====================================================================== */
+:root{
+  --pink:      #E8547C;   /* 強調色（見出しのキーワード、CTA） */
+  --pink-bg:   #FDEEF3;   /* 強調の背景 */
+  --blue:      #3B8FC4;   /* 補助色 */
+  --blue-bg:   #EAF4FA;
+  --yellow-bg: #FDF6E3;   /* 注釈の背景 */
+  --teal:      #00AEA2;   /* 遷移先に合わせた主色（CTA・カード） */
+  --teal-d:    #008C82;   /* CTAボタンの影 */
+  --teal-2:    #44C0DF;   /* バッジ */
+  --teal-bg:   #EFFAFA;   /* カード・CTAの背景 */
+  --teal-line: #CCEAEC;   /* カードの罫線 */
+  --ink:       #2B2B2B;   /* 本文の文字色 */
+  --ink-sub:   #666;      /* 補足の文字色 */
+  --line:      #E5E5E5;
+  --bg:        #FFFFFF;
+  --maxw:      720px;     /* 本文の最大幅 */
+}
+
+*{box-sizing:border-box;}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans JP",system-ui,sans-serif;
+  font-size:17px; line-height:1.9; -webkit-font-smoothing:antialiased;
+  font-feature-settings:"palt" 1;
+}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 20px 80px;}
+
+/* 見出し */
+h1{
+  font-size:26px; line-height:1.5; font-weight:800; margin:32px 0 20px;
+  letter-spacing:.01em;
+}
+h2{
+  font-size:21px; line-height:1.55; font-weight:800; margin:52px 0 18px;
+  padding-left:14px; border-left:5px solid var(--pink); letter-spacing:.01em;
+}
+h3{font-size:18px; font-weight:700; margin:36px 0 14px;}
+.hl{color:var(--pink);}                                  /* 強調（赤） */
+/* マーカー：画面に入ったタイミングで左から右へ引かれる */
+.marker{
+  font-weight:700;
+  background-image:linear-gradient(transparent 58%, #FFF1A8 58%);
+  background-repeat:no-repeat;
+  background-size:0% 100%;
+  transition:background-size .9s cubic-bezier(.25,.8,.35,1);
+}
+.marker.drawn{background-size:100% 100%;}
+@media (prefers-reduced-motion:reduce){
+  .marker{transition:none; background-size:100% 100%;}
+}
+
+p{margin:0 0 18px;}
+ul{margin:0 0 18px; padding-left:1.4em;}
+li{margin-bottom:10px;}
+strong{font-weight:700;}
+
+/* 画像 */
+figure{margin:26px 0;}
+figure img{width:100%; height:auto; display:block; border-radius:8px; cursor:zoom-in;}
+figcaption{font-size:12px; color:var(--ink-sub); text-align:center; margin-top:6px;}
+
+/* 画像の拡大表示（タップ／クリックで開く） */
+#lightbox{
+  position:fixed; inset:0; z-index:200; background:rgba(0,0,0,.92);
+  display:none; align-items:center; justify-content:center; padding:12px;
+}
+#lightbox.on{display:flex;}
+#lightbox img{max-width:100%; max-height:92vh; width:auto; border-radius:4px;}
+#lightbox .lbclose{
+  position:fixed; top:8px; right:14px; color:#fff; font-size:34px; line-height:1;
+  background:none; border:none; cursor:pointer; padding:8px;
+}
+#lightbox .lbhint{
+  position:fixed; bottom:14px; left:0; right:0; text-align:center;
+  color:rgba(255,255,255,.7); font-size:12px;
+}
+.imgph{ /* 画像が未配置のときだけ自動で表示される枠 */
+  display:none;
+  background:var(--blue-bg); border:2px dashed var(--blue); border-radius:8px;
+  padding:40px 20px; text-align:center; color:var(--blue); font-size:14px; font-weight:700;
+}
+
+/* 表 */
+.tw{overflow-x:auto; margin:0 0 20px;}
+table{border-collapse:collapse; width:100%; font-size:15px; min-width:280px;}
+th,td{padding:12px 14px; border:1px solid var(--line); text-align:left; line-height:1.6;}
+th{background:#F7F7F7; font-weight:700;}
+td.num{white-space:nowrap; font-variant-numeric:tabular-nums;}
+
+/* 注釈 */
+.note{
+  font-size:13px; color:var(--ink-sub); line-height:1.75; background:var(--yellow-bg);
+  padding:12px 14px; border-radius:6px; margin:0 0 20px;
+}
+
+/* 座布団（共感の箇条書きブロック） */
+.zabuton{
+  background:var(--blue-bg); border:1px solid #C7E0EF; border-radius:12px;
+  padding:16px 20px; margin:0 0 22px; list-style:none;
+}
+.zabuton li{
+  position:relative; padding-left:1.3em; margin-bottom:12px;
+  font-weight:700; font-size:16px; line-height:1.7; color:var(--ink);
+}
+.zabuton li:last-child{margin-bottom:0;}
+.zabuton li::before{
+  content:"・"; position:absolute; left:0; color:var(--blue); font-weight:800;
+}
+
+/* 吹き出し（軽い思い込みのセリフ） */
+.bubbles{margin:0 0 20px;}
+.bubble{
+  position:relative; background:var(--yellow-bg); border:1px solid #F0E2B8;
+  border-radius:10px; padding:12px 16px 12px 44px; margin:0 0 12px;
+  font-size:15.5px; font-weight:700; color:var(--ink); line-height:1.6;
+}
+.bubble:last-child{margin-bottom:0;}
+.bubble::before{
+  content:"💬"; position:absolute; left:14px; top:50%; transform:translateY(-50%);
+  font-size:18px;
+}
+
+/* 後悔の声（顔つき吹き出し） */
+.voices{margin:0 0 22px;}
+.voice{display:flex; gap:12px; align-items:flex-start; margin-bottom:14px;}
+.voice:last-child{margin-bottom:0;}
+.voice-face{width:54px; height:54px; flex:0 0 auto; border-radius:50%; overflow:hidden; background:#F0F0F0; border:2px solid #fff; box-shadow:0 1px 5px rgba(0,0,0,.15);}
+.voice-face img{width:100%; height:100%; object-fit:cover; display:block;}
+.voice-bubble{position:relative; background:var(--yellow-bg); border:1px solid #EFE0B0; border-radius:12px; padding:12px 15px; margin:0; font-size:15px; font-weight:700; line-height:1.65; color:var(--ink);}
+.voice-bubble::before{content:""; position:absolute; left:-9px; top:17px; border-style:solid; border-width:7px 9px 7px 0; border-color:transparent #EFE0B0 transparent transparent;}
+.voice-bubble::after{content:""; position:absolute; left:-7px; top:18px; border-style:solid; border-width:6px 8px 6px 0; border-color:transparent var(--yellow-bg) transparent transparent;}
+
+/* 問いかけの見出しバー（ピンク） */
+.qbar{
+  background:var(--pink); color:#fff; font-weight:800;
+  font-size:18px; line-height:1.55; border-radius:8px;
+  padding:14px 18px; margin:38px 0 22px;
+}
+h2.qbar{border-left:none; font-size:20px; margin:52px 0 20px;}
+
+/* 3つのポイント カード */
+.point-cards{margin:22px 0 28px;}
+.point-card{display:flex; gap:14px; align-items:flex-start; background:var(--teal-bg); border:1px solid var(--teal-line); border-radius:12px; padding:16px 18px; margin-bottom:14px;}
+.point-card:last-child{margin-bottom:0;}
+.point-icon{font-size:30px; flex:0 0 auto; line-height:1.3;}
+.point-body{flex:1 1 auto; min-width:0;}
+.point-title{font-size:16.5px; font-weight:800; margin:0 0 6px; line-height:1.5; color:var(--ink);}
+.point-title .num{color:var(--pink); margin-right:5px;}
+.point-desc{font-size:14.5px; line-height:1.7; margin:0; color:var(--ink-sub);}
+
+/* 学校カード（遷移先のデザインに合わせる） */
+.schools{margin:24px 0 30px;}
+.school{
+  border:1px solid var(--line); border-radius:10px;
+  padding:18px 16px; margin-bottom:14px; background:#fff;
+}
+.school:nth-child(even){background:var(--teal-bg); border-color:var(--teal-line);}
+.school-head{display:flex; gap:14px; align-items:flex-start; margin-bottom:13px;}
+.school-thumb{width:96px; flex:0 0 96px; border-radius:6px; overflow:hidden; background:#F4F4F4;}
+.school-thumb img{width:100%; height:auto; display:block;}
+.school-body{flex:1 1 auto; min-width:0;}
+.badges{margin:0 0 7px;}
+.badge{
+  display:inline-block; border:1px solid var(--teal-2); color:var(--teal-2);
+  background:#fff; font-size:11px; font-weight:700; line-height:1.5;
+  padding:2px 9px; border-radius:3px; margin:0 5px 4px 0;
+}
+.school h3{font-size:16.5px; font-weight:700; margin:0; line-height:1.5;}
+.school > h3{margin-bottom:13px;}   /* 画像なし版（サムネイルを使わない場合） */
+.school ul{margin:0; padding-left:1.15em; font-size:14.5px;}
+.school li{margin-bottom:8px; line-height:1.75;}
+.school li:last-child{margin-bottom:0;}
+.school .src{display:block; font-size:11.5px; color:var(--ink-sub); margin-top:4px; line-height:1.6;}
+.school .operator{font-size:12.5px; color:var(--ink-sub); margin:2px 0 4px; line-height:1.55;}
+.school .operator strong{color:var(--ink); font-weight:700;}
+
+/* CTA */
+.cta-img{display:block; margin:0 0 20px; border-radius:10px; overflow:hidden; box-shadow:0 2px 10px rgba(0,0,0,.08);}
+.cta-img img{width:100%; height:auto; display:block;}
+.textlink-wrap{text-align:center; margin:6px 0 26px;}
+.textlink{color:var(--blue); font-weight:700; text-decoration:underline; font-size:19.2px; line-height:1.7;}
+.scroll-cue{text-align:center; margin:24px 0 20px; line-height:0;}
+.scroll-cue svg{animation:cue-bounce 1.4s ease-in-out infinite;}
+@keyframes cue-bounce{0%,100%{transform:translateY(0);} 50%{transform:translateY(7px);}}
+@media (prefers-reduced-motion:reduce){.scroll-cue svg{animation:none;}}
+.ul{font-weight:700; text-decoration:underline; text-underline-offset:3px;}
+.red{color:#e60000; font-weight:700;}
+.blue{color:#2b8cd9; font-weight:700;}
+.marker.pink{background-image:linear-gradient(transparent 58%, #F9C7D6 58%);}
+.cite{font-size:12px; color:var(--ink-sub);}
+.cta{
+  background:var(--teal-bg); border:2px solid var(--teal); border-radius:12px;
+  padding:26px 16px; margin:40px 0 20px; text-align:center;
+}
+.cta p{margin:0 0 16px; font-size:16px;}
+.cta-btn{
+  display:block; width:100%; background:var(--teal); color:#fff; text-decoration:none;
+  font-size:clamp(13.5px, 4.4vw, 19px); font-weight:800; padding:20px 8px; border-radius:10px;
+  box-shadow:0 4px 0 var(--teal-d); letter-spacing:0; white-space:nowrap;
+}
+.cta-btn:active{transform:translateY(3px); box-shadow:0 1px 0 var(--teal-d);}
+.cta-badge{
+  display:block; width:fit-content; margin:0 auto 10px;
+  background:#fff; color:var(--teal); font-size:13px; font-weight:800;
+  padding:4px 20px; border-radius:100px; letter-spacing:.04em;
+}
+#fixcta .cta-badge{font-size:11px; padding:2px 14px; margin-bottom:6px;}
+
+/* A：数秒に1回、光沢が横切る */
+.cta-btn, #fixcta a{position:relative; overflow:hidden;}
+.cta-btn::after, #fixcta a::after{
+  content:""; position:absolute; top:-60%; left:-70%; width:35%; height:220%;
+  background:linear-gradient(100deg, transparent, rgba(255,255,255,.5), transparent);
+  transform:skewX(-20deg); pointer-events:none;
+  animation:shine 4.5s ease-in-out infinite;
+}
+@keyframes shine{
+  0%, 65% {left:-70%;}
+  100%    {left:140%;}
+}
+
+/* B：画面に入ったら1回だけ跳ねる */
+.cta-btn.pop{animation:pop .65s cubic-bezier(.34,1.56,.64,1);}
+@keyframes pop{
+  0%   {transform:scale(1);}
+  40%  {transform:scale(1.05);}
+  70%  {transform:scale(.985);}
+  100% {transform:scale(1);}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .cta-btn::after, #fixcta a::after{display:none;}
+  .cta-btn.pop{animation:none;}
+}
+.cta-sub{font-size:13px; color:var(--ink-sub); margin-top:34px;}
+
+/* 信頼要素 */
+.trust{
+  background:var(--blue-bg); border:1px solid #C7E0EF; border-radius:10px;
+  padding:20px 22px; margin:0 0 30px;
+}
+.trust-t{
+  font-size:13px; font-weight:800; color:var(--blue); margin:0 0 12px;
+  letter-spacing:.05em;
+}
+.trust p{font-size:14.5px; margin:0 0 10px; line-height:1.8;}
+.trust p:last-child{margin-bottom:0;}
+.trust-note{font-size:13px; color:var(--ink-sub);}
+
+/* PR表記（ステマ規制対応） */
+.pr-label{
+  display:inline-block; font-size:12px; color:var(--ink-sub);
+  border:1px solid var(--line); border-radius:4px; padding:3px 10px; margin:24px 0 0;
+}
+
+/* フッターのリンク */
+.flinks{margin:20px 0 8px;}
+.flinks a{color:var(--ink-sub); text-decoration:underline;}
+.copy{font-size:11px; color:var(--ink-sub); margin:0;}
+
+/* 追従CTA（スマホのみ・スクロール後に出現） */
+#fixcta{
+  display:none; /* ★追従CTAを一旦非表示。復活させるにはこの display:none の行を削除するだけ */
+  position:fixed; left:0; right:0; bottom:0; z-index:100; padding:10px 14px;
+  background:rgba(255,255,255,.96); border-top:1px solid var(--line);
+  transform:translateY(120%); transition:transform .3s ease;
+}
+#fixcta.on{transform:translateY(0);}
+#fixcta a{
+  display:block; background:var(--teal); color:#fff; text-decoration:none;
+  text-align:center; font-weight:800; font-size:16px; padding:15px; border-radius:8px;
+}
+
+footer{margin-top:60px; padding-top:24px; border-top:1px solid var(--line); font-size:12px; color:var(--ink-sub);}
+
+@media (min-width:768px){
+  body{font-size:17px;}
+  h1{font-size:32px;}
+  h2{font-size:24px;}
+  .cta-btn{display:inline-block; width:auto; padding:20px 48px;}
+  #fixcta{display:none;} /* PCでは追従CTAを出さない */
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<!-- ====================================================================
+     導入
+     ==================================================================== -->
+<figure>
+  <img src="images/futoukou/01-futoukou-hero_2.webp" alt="不登校経験者向け 失敗しない通信制高校・サポート校6選 2026年版">
+  <div class="imgph">FV画像（images/futoukou/01-futoukou-hero.png）</div>
+</figure>
+
+<p>子供が不登校になると、大きく不安を抱えますよね⋯</p>
+
+<ul class="zabuton">
+  <li>今日も学校にいかなかった⋯</li>
+  <li>何を聞いても、何も応えてくれない</li>
+  <li>子どもの将来を考えると…<strong class="red">絶望する日々</strong>⋯</li>
+</ul>
+
+<p><strong>「不登校のうちの子でも通える高校を探してあげたい」</strong></p>
+<p>そう思ってネットで情報収集をしていませんか？</p>
+
+<div class="bubbles">
+  <p class="bubble">家から近いからここでいいかな</p>
+  <p class="bubble">学費が安いからここでいいかな</p>
+</div>
+
+<p>その探し方、<strong class="red">かなり危険</strong>です。</p>
+
+<p class="qbar">よくある“ミスマッチ”の後悔</p>
+
+<p>通信制高校で後悔する一番の原因は、じつは<strong>学校の良し悪しではありません</strong>。<br><strong>「自分の希望」と「学校の特色」が合っていなかった</strong>——いわゆる“ミスマッチ”です。</p>
+
+<div class="scroll-cue" aria-hidden="true">
+  <svg width="44" height="34" viewBox="0 0 44 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M8 7 L22 19 L36 7" stroke="#9AA0A6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M8 16 L22 28 L36 16" stroke="#9AA0A6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</div>
+
+<figure>
+  <img src="images/futoukou/06-futoukou-mismatch-4koma.webp" alt="家から近いという理由だけで週3コースを選び、自分に合わず後悔する中学生の4コマ漫画">
+  <div class="imgph">4コマ漫画（images/futoukou/06-futoukou-mismatch-4koma.webp）</div>
+</figure>
+
+<div class="voices">
+  <div class="voice">
+    <div class="voice-face"><img src="images/futoukou/07-voice-01.webp" alt=""></div>
+    <p class="voice-bubble">ネットの情報だけで決めたけど、入学したら印象が全然違った…</p>
+  </div>
+  <div class="voice">
+    <div class="voice-face"><img src="images/futoukou/07-voice-02.webp" alt=""></div>
+    <p class="voice-bubble">1校しか資料を取らなかった。他と比べれば、もっと合う学校があったかも…</p>
+  </div>
+  <div class="voice">
+    <div class="voice-face"><img src="images/futoukou/07-voice-03.webp" alt=""></div>
+    <p class="voice-bubble">適当に普通コースに入ったけど、自分の興味は美容の専門コースだった⋯</p>
+  </div>
+</div>
+
+<p><br>こうした後悔の多くは、<span class="marker">“もっと調べていれば”防げた</span>ものです。<br><br>家からの距離やイメージだけで決めず、<strong>通学ペース・コース・サポート</strong>まで見比べておくことが、後悔しない選び方につながります。</p>
+
+
+<!-- ====================================================================
+     失敗しない選び方（3軸）
+     ==================================================================== -->
+<p>とはいえ、通信制・サポート校は<strong>学校ごとに特色がまったく違います</strong>。だからこそ、自分に合うかを見極めるポイントを知っておくことが大切です。</p>
+
+<p>次の<span class="marker pink">3つ</span>を押さえれば、<strong>ミスマッチはぐっと減らせます</strong>。</p>
+
+<div class="scroll-cue" aria-hidden="true">
+  <svg width="44" height="34" viewBox="0 0 44 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M8 7 L22 19 L36 7" stroke="#9AA0A6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M8 16 L22 28 L36 16" stroke="#9AA0A6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</div>
+
+<h2 id="cta-from" class="qbar">通信制高校選びで、失敗しないための3つのポイント</h2>
+
+<p>不登校のお子さんの場合、何より大切なのは<strong>「無理なく通い続けられるか」</strong>です。次の3つを必ず確認してください。</p>
+
+<div class="point-cards">
+  <div class="point-card">
+    <div class="point-icon">📖</div>
+    <div class="point-body">
+      <p class="point-title"><span class="num">①</span>HPだけで決めず、パンフレットも見たか</p>
+      <p class="point-desc">HPには載せきれない情報がパンフレットにはたくさん載っています。またキャンパスごとの違いもなかなかHPには載っていないことが多いです。</p>
+    </div>
+  </div>
+  <div class="point-card">
+    <div class="point-icon">📅</div>
+    <div class="point-body">
+      <p class="point-title"><span class="num">②</span>通学ペースを「自分に合わせて選べる」か</p>
+      <p class="point-desc">週5〜在宅まで選べて、途中でコースも変えられる。体調に波があっても、無理なく続けやすい。</p>
+    </div>
+  </div>
+  <div class="point-card">
+    <div class="point-icon">🤝</div>
+    <div class="point-body">
+      <p class="point-title"><span class="num">③</span>サポートの「中身」が具体的か</p>
+      <p class="point-desc">担任制・個別指導・カウンセラーなど、支えの中身を具体的に説明できる学校を選ぶ。</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ====================================================================
+     この6校が安心
+     ==================================================================== -->
+<div class="scroll-cue" aria-hidden="true">
+  <svg width="44" height="34" viewBox="0 0 44 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M8 7 L22 19 L36 7" stroke="#9AA0A6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M8 16 L22 28 L36 16" stroke="#9AA0A6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</div>
+
+<h2 id="closing" class="qbar">人気の学校6選</h2>
+
+<p>ご紹介するのは、<strong>いずれも名の知れた大手教育グループが運営</strong>し、<strong>通学スタイルを選べて、サポートの中身も具体的</strong>な通信制高校・サポート校です。</p>
+
+<p>それぞれの運営母体と特徴を見てみましょう。</p>
+
+<div class="schools">
+
+  <div class="school">
+    <div class="school-head">
+      <div class="school-thumb"><img src="images/schools/nkoutou.png" alt="N高等学校・S高等学校・R高等学校"></div>
+      <div class="school-body">
+        <p class="badges"><span class="badge">通信制高校</span></p>
+        <h3>N高等学校・S高等学校・R高等学校</h3>
+        <p class="operator">運営：<strong>角川ドワンゴ学園</strong>（KADOKAWA・ドワンゴ）</p>
+      </div>
+    </div>
+    <ul>
+      <li>3万人突破、高校生の100人に一人がN高生！</li>
+      <li>全国にある100ヶ所以上のキャンパス</li>
+      <li>ネットコース、週5・週3・週1＋コースから選べる</li>
+    </ul>
+  </div>
+
+  <div class="school">
+    <div class="school-head">
+      <div class="school-thumb"><img src="images/schools/try.png" alt="トライ式高等学院"></div>
+      <div class="school-body">
+        <p class="badges"><span class="badge">サポート校</span></p>
+        <h3>トライ式高等学院</h3>
+        <p class="operator">運営：<strong>トライグループ</strong>（家庭教師のトライ）</p>
+      </div>
+    </div>
+    <ul>
+      <li>通信制高校・サポート校で、全国No.1<sup>*</sup>の大学進学率！</li>
+      <li>体調に合わせて受講スタイルをいつでも変更できる</li>
+      <li><span class="src">*在籍生徒数3,500名以上の通信制高校・サポート校において進学率全国1位。2023/3/23 産経メディックス調べ。</span></li>
+    </ul>
+  </div>
+
+  <div class="school">
+    <div class="school-head">
+      <div class="school-thumb"><img src="images/schools/asukamirai.jpg" alt="飛鳥未来きぼう高等学校"></div>
+      <div class="school-body">
+        <p class="badges"><span class="badge">通信制高校</span></p>
+        <h3>飛鳥未来きぼう高等学校<span style="font-size:13px; font-weight:400;">（飛鳥未来高等学校・飛鳥未来きずな高等学校）</span></h3>
+        <p class="operator">運営：<strong>三幸学園</strong>（大手専門学校グループ）</p>
+      </div>
+    </div>
+    <ul>
+      <li>自分に合った通学スタイルが選べて、服装も自由！</li>
+      <li>多彩な専門分野が学べて、自分の「好き」が見つかる</li>
+      <li>豊富な学校行事で友達と一緒に思い出作り</li>
+    </ul>
+  </div>
+
+  <div class="school">
+    <div class="school-head">
+      <div class="school-thumb"><img src="images/schools/daiichi.jpg" alt="第一学院高等学校"></div>
+      <div class="school-body">
+        <p class="badges"><span class="badge">通信制高校</span></p>
+        <h3>第一学院高等学校</h3>
+        <p class="operator">運営：<strong>ウィザス</strong>（総合教育サービス）</p>
+      </div>
+    </div>
+    <ul>
+      <li>教育理念「1／1（いちぶんのいち）の教育」</li>
+      <li>自分のペースで通える、安心できる高校生活</li>
+      <li>「成長実感型教育」で自分を今よりも好きになる！</li>
+    </ul>
+  </div>
+
+  <div class="school">
+    <div class="school-head">
+      <div class="school-thumb"><img src="images/schools/aozora.png" alt="おおぞら高校"></div>
+      <div class="school-body">
+        <p class="badges"><span class="badge">通信制高校</span><span class="badge">サポート校</span></p>
+        <h3>おおぞら高校</h3>
+        <p class="operator">運営：<strong>KTC学園</strong></p>
+      </div>
+    </div>
+    <ul>
+      <li>なりたい大人になるための学校。<sup>&reg;</sup></li>
+      <li>先生＝マイコーチ<sup>&reg;</sup>が寄り添い共に歩む</li>
+      <li>屋久島スクーリングで人や自然とつながる！</li>
+    </ul>
+  </div>
+
+  <div class="school">
+    <div class="school-head">
+      <div class="school-thumb"><img src="images/schools/benesse.jpg" alt="ベネッセ高等学院"></div>
+      <div class="school-body">
+        <p class="badges"><span class="badge">サポート校</span></p>
+        <h3>ベネッセ高等学院</h3>
+        <p class="operator">運営：<strong>ベネッセ</strong></p>
+      </div>
+    </div>
+    <ul>
+      <li>通信教育大手ベネッセのノウハウを凝縮</li>
+      <li>クラス担任と「赤ペンメンター」のWサポート制度</li>
+      <li>総合型選抜でやりたいことを叶えられる！</li>
+    </ul>
+  </div>
+
+</div>
+
+<p>どの学校が合うかは、お子さんの状態やご家庭の事情によります。<br><strong>1校だけで決めず、まとめて見比べる</strong>のが確実です。</p>
+
+<p id="pre-cta">とはいえ、1校ずつ調べて問い合わせるのは、正直かなり大変。<br>そんなときに役立つのが<span class="marker">「ズバット通信制高校比較」</span>です。</p>
+
+<p>地域や「<strong>通学のペース</strong>」「<strong>サポート</strong>」「<strong>進学</strong>」などの条件を選ぶだけで、<strong>〈人気校の6校〉を含む複数校の資料をまとめて資料請求</strong>できます。</p>
+
+<p class="textlink-wrap"><a href="https://ad-fam.com/ad/p/r?_site=49717&amp;_article=16318" class="textlink" data-cta="text-top" rel="sponsored nofollow">【完全無料・まとめて一括】<br>「ズバット通信制高校比較」で資料を取り寄せる</a></p>
+
+<div class="scroll-cue" aria-hidden="true">
+  <svg width="44" height="34" viewBox="0 0 44 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M8 7 L22 19 L36 7" stroke="#9AA0A6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M8 16 L22 28 L36 16" stroke="#9AA0A6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</div>
+
+<p class="qbar">実は、もう時間がありません</p>
+
+<p>そして、早いもので<strong>もう夏も終わり</strong>。<br><br><span class="marker">9月には、多くの通信制高校で出願が始まります</span>。<br><strong class="red">今すぐに、資料請求をして学校を比較する必要があります。</strong></p>
+
+<figure>
+  <picture>
+    <source media="(max-width:767px)" srcset="images/futoukou/04-futoukou-schedule-sp.webp">
+    <img src="images/futoukou/04-futoukou-schedule-pc.webp" alt="中3の進路スケジュール。今〜夏に情報収集・資料請求、9〜10月に出願、11〜12月に入試、4月に入学">
+  </picture>
+  <div class="imgph">中3の進路スケジュール（images/futoukou/04-futoukou-schedule-pc.webp）</div>
+</figure>
+
+<p>今や、<strong>毎年およそ31万人</strong>が通うようになった通信制高校。<span class="cite">※文部科学省「学校基本調査」（令和8年度速報値）</span></p>
+
+<p>人気のコースや学校には応募が殺到し、<strong class="red">「定員オーバー」</strong>になる可能性もあるので、早めの資料請求をお勧めします。</p>
+
+<p>わたしたち親が与えてあげられるのは、<span class="marker">「未来への選択肢」</span>くらいしかありません。<br>選択肢が多いうちに、選べる今が、資料請求のタイミングです。</p>
+
+
+<!-- ====================================================================
+     CTA
+     ▼ここを差し替える④ ASPから発行されたURLに置き換える
+     ==================================================================== -->
+<div class="cta">
+  <a href="https://ad-fam.com/ad/p/r?_site=49717&amp;_article=16318" class="cta-img" data-cta="image" rel="sponsored nofollow"><img src="images/futoukou/05-futoukou-cta.webp" alt="自分らしく通える高校は、きっと見つかる。"></a>
+  <p><strong>やりたいこと・通学の頻度・お住まいの地域から、条件に合う通信制高校を探して、<br>まとめて資料請求できるサービスがあります。</strong></p>
+  <p>費用はかかりません。まずは何校か資料を取り寄せて、<strong>運営母体・通学スタイル・サポート体制</strong>を見比べてみることから始めてみてください。</p>
+  <a href="https://ad-fam.com/ad/p/r?_site=49717&amp;_article=16318" class="cta-btn" data-cta="main" rel="sponsored nofollow"><span class="cta-badge">カンタン60秒</span>無料で人気校の資料を一括請求する</a>
+  <p class="cta-sub">※資料請求後、学校から連絡が入る場合があります。気になる点は、その際に直接ご確認いただけます。</p>
+</div>
+
+<!-- 信頼要素（CTA直下） -->
+<div class="trust">
+  <p class="trust-t">運営元について</p>
+  <p>ご紹介しているサービス「<strong>ズバット通信制高校比較</strong>」は、<strong>株式会社ウェブクルー</strong>が運営しています。</p>
+  <p>これまでに<strong>20万人以上</strong>が利用しています<span style="font-size:12px;">（※2025年10月現在）</span>。</p>
+  <p>同社は、お客様から取得する個人情報を含むすべての情報について、情報セキュリティの国際規格<strong>「ISO27001（ISMS）」の認証を取得</strong>し、それに基づく管理を行っています。</p>
+  <p class="trust-note">お子様の進路にかかわる情報をお預けいただくことになるため、気になる方も多い点だと思い、記載させていただきました。<br><strong>資料請求に費用はかかりません。</strong></p>
+</div>
+
+<footer>
+  <p>本記事は文部科学省「学校基本調査」および各校が公表する情報をもとに作成しています。内容は変更される場合があります。最新の情報は各校および文部科学省・各自治体の発信をご確認ください。</p>
+
+  <p class="flinks">
+    <a href="privacy.html">運営者情報・プライバシーポリシー</a>
+  </p>
+</footer>
+
+</div><!-- /.wrap -->
+
+
+<!-- 画像の拡大表示 -->
+<div id="lightbox">
+  <button class="lbclose" aria-label="閉じる">×</button>
+  <img src="" alt="">
+  <p class="lbhint">画面をタップで閉じる／指を広げてさらに拡大できます</p>
+</div>
+
+<!-- 追従CTA（スマホのみ） -->
+<div id="fixcta">
+  <a href="https://ad-fam.com/ad/p/r?_site=49717&amp;_article=16318" data-cta="fixed" rel="sponsored nofollow"><span class="cta-badge">カンタン60秒</span>無料で人気校の資料を一括請求する</a>
+</div>
+
+
+<script>
+/* ======================================================================
+   計測スクリプト（触らなくてOK）
+   ・CTAクリックを GA4 と Google広告 の両方に送信
+   ・スクロール到達率を GA4 に送信（25/50/75/100%）
+   ・追従CTAの出し入れ
+   ====================================================================== */
+(function(){
+  'use strict';
+
+  /* ------------------------------------------------------------------
+     famAD タグ発火向上：URLパラメータをASPリンクへ引き継ぐ
+     広告クリックで付く gclid 等を ad-fam.com のリンクに渡します。
+     これが無いと成果とクリックが紐づかず、Google広告に実CVを戻せません。
+     ※ASPリンクは各<a>のhrefに直接記述済み（▼ここを差し替える④）
+     ------------------------------------------------------------------ */
+  (function(){
+    var prm = location.search;              // 例: "?gclid=xxx&utm_source=yyy"
+    if (!prm || prm.length < 2) return;
+    var query = prm.slice(1);               // 先頭の "?" を外す
+    document.querySelectorAll('a[href*="ad-fam.com"]').forEach(function(a){
+      var href = a.getAttribute('href');
+      if (!href || href.indexOf(query) > -1) return;   // 二重付与を防ぐ
+      a.setAttribute('href', href + (href.indexOf('?') > -1 ? '&' : '?') + query);
+    });
+  })();
+
+  // ---- CTAクリック計測 ----
+  // Google広告のコンバージョンが送信されてから遷移する（event_callback）。
+  // 遷移でページが破棄されて計測を取りこぼすのを防ぐ。
+  // 返事が来ないときは WAIT_MS で必ず遷移させるので、リンクが死ぬことはない。
+  var WAIT_MS   = 1200;
+  var navigating = false;   // 遷移待ちの間の連打を無視する
+
+  document.querySelectorAll('[data-cta]').forEach(function(el){
+    // click は中クリックでは発火しないので auxclick も拾う（別タブで開く人を取りこぼさない）
+    ['click', 'auxclick'].forEach(function(type){ el.addEventListener(type, onCta); });
+
+    function onCta(e){
+      if (e.type === 'auxclick' && e.button !== 1) return;   // 右クリックは対象外
+      if (navigating) { e.preventDefault(); return; }        // すでに遷移処理に入っている
+
+      var place = el.getAttribute('data-cta'); // text-top / image / main / fixed
+
+      // Clarity: このセッションにタグを付けて絞り込めるようにする
+      if (typeof clarity === 'function') clarity('set', 'cta_clicked', place);
+
+      if (typeof gtag !== 'function') return;   // 計測タグが無ければ普通に遷移
+
+      // GA4: どのCTAが押されたか
+      gtag('event', 'cta_click', {
+        cta_position: place,
+        page_title: document.title
+      });
+
+      if (MEASURE.ADS_ID.indexOf('X') !== -1) return;  // 広告IDが未設定（Xのまま）なら普通に遷移
+
+      // 別タブで開く操作（⌘/Ctrl/Shift/Alt＋クリック・中クリック）は
+      // 遷移を横取りせず、コンバージョンの送信だけ行う
+      var newTab = e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0;
+      var url    = el.getAttribute('href');
+      var hold   = !newTab && !!url;   // 遷移を待たせるかどうか
+
+      if (hold) { e.preventDefault(); navigating = true; }
+
+      var moved = false;
+      function go(){
+        if (moved || !hold) return;
+        moved = true;
+        window.location = url;
+      }
+
+      // Google広告: 疑似コンバージョン（スマート入札の学習用）
+      gtag('event', 'conversion', {
+        send_to: MEASURE.ADS_ID + '/' + MEASURE.ADS_LABEL,
+        event_callback: go
+      });
+
+      if (hold) setTimeout(go, WAIT_MS);   // 送信が返らないときの保険
+    }
+  });
+
+  // ---- スクロール到達率 ----
+  var marks = [25,50,75,100], fired = {};
+  window.addEventListener('scroll', function(){
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    if (h <= 0) return;
+    var pct = Math.round(window.scrollY / h * 100);
+    marks.forEach(function(m){
+      if (pct >= m && !fired[m]) {
+        fired[m] = true;
+        if (typeof gtag === 'function') gtag('event', 'scroll_depth', {percent: m});
+      }
+    });
+  }, {passive:true});
+
+  // ---- 画像が無いときだけプレースホルダを表示 ----
+  document.querySelectorAll('figure img').forEach(function(img){
+    img.addEventListener('error', function(){
+      img.style.display = 'none';
+      var ph = img.nextElementSibling;
+      if (ph && ph.classList.contains('imgph')) ph.style.display = 'block';
+    });
+  });
+
+  // ---- CTAボタン：画面に入ったら1回だけ跳ねる ----
+  var mainBtn = document.querySelector('.cta-btn');
+  if (mainBtn && 'IntersectionObserver' in window) {
+    var bo = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) { e.target.classList.add('pop'); bo.unobserve(e.target); }
+      });
+    }, {threshold: 0.8});
+    bo.observe(mainBtn);
+  }
+
+  // ---- マーカー：画面に入ったら下線を引く ----
+  if ('IntersectionObserver' in window) {
+    var mo = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) {
+          e.target.classList.add('drawn');
+          mo.unobserve(e.target);
+        }
+      });
+    }, {threshold: 0.6, rootMargin: '0px 0px -10% 0px'});
+    document.querySelectorAll('.marker').forEach(function(el){ mo.observe(el); });
+  } else {
+    document.querySelectorAll('.marker').forEach(function(el){ el.classList.add('drawn'); });
+  }
+
+  // ---- 画像をタップ／クリックで拡大 ----
+  var lb = document.getElementById('lightbox');
+  var lbImg = lb.querySelector('img');
+  document.querySelectorAll('figure img').forEach(function(img){
+    img.addEventListener('click', function(){
+      lbImg.src = img.currentSrc || img.src;
+      lbImg.alt = img.alt;
+      lb.classList.add('on');
+      document.body.style.overflow = 'hidden';
+      if (typeof gtag === 'function') gtag('event', 'image_zoom', {image: img.getAttribute('src')});
+    });
+  });
+  function closeLb(){ lb.classList.remove('on'); document.body.style.overflow = ''; }
+  lb.addEventListener('click', closeLb);
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeLb(); });
+
+  // ---- 追従CTA ----
+  // 表示する区間：「失敗しないための3つのポイント」に到達
+  //             〜「正直かなり大変です。」が見え始める直前まで
+  // それ以降（本体CTAが見えている間・ページ末尾）は非表示にして重複を防ぐ
+  var fix   = document.getElementById('fixcta');
+  var start = document.getElementById('cta-from');
+  var stop  = document.getElementById('pre-cta');
+
+  function topOf(el){
+    var t = 0;
+    while (el) { t += el.offsetTop; el = el.offsetParent; }
+    return t;
+  }
+
+  function updateFix(){
+    if (!fix || !start) return;
+    var vh     = window.innerHeight;
+    var bottom = window.scrollY + vh;          // 画面の下端
+    var from   = topOf(start);                 // ここに到達したら表示
+    var to     = stop ? topOf(stop) : Infinity; // ここが見え始めたら非表示
+    var show   = bottom > from && bottom < to;
+    fix.classList.toggle('on', show);
+  }
+
+  window.addEventListener('scroll', updateFix, {passive:true});
+  window.addEventListener('resize', updateFix);
+  window.addEventListener('load', updateFix);
+  updateFix();
+})();
+</script>
+
+</body>
+</html>
