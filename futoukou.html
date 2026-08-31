@@ -668,30 +668,59 @@ footer{margin-top:60px; padding-top:24px; border-top:1px solid var(--line); font
     });
   })();
 
-  // CTAのhrefを一括設定
   // ---- CTAクリック計測 ----
+  // Google広告のコンバージョンが送信されてから遷移する（event_callback）。
+  // 遷移でページが破棄されて計測を取りこぼすのを防ぐ。
+  // 返事が来ないときは WAIT_MS で必ず遷移させるので、リンクが死ぬことはない。
+  var WAIT_MS   = 1200;
+  var navigating = false;   // 遷移待ちの間の連打を無視する
+
   document.querySelectorAll('[data-cta]').forEach(function(el){
-    el.addEventListener('click', function(){
-      var place = el.getAttribute('data-cta'); // main / fixed
+    // click は中クリックでは発火しないので auxclick も拾う（別タブで開く人を取りこぼさない）
+    ['click', 'auxclick'].forEach(function(type){ el.addEventListener(type, onCta); });
 
-      // GA4: どのCTAが押されたか
-      if (typeof gtag === 'function') {
-        gtag('event', 'cta_click', {
-          cta_position: place,
-          page_title: document.title
-        });
+    function onCta(e){
+      if (e.type === 'auxclick' && e.button !== 1) return;   // 右クリックは対象外
+      if (navigating) { e.preventDefault(); return; }        // すでに遷移処理に入っている
 
-        // Google広告: 疑似コンバージョン（スマート入札の学習用）
-        if (MEASURE.ADS_ID.indexOf('X') === -1) {
-          gtag('event', 'conversion', {
-            send_to: MEASURE.ADS_ID + '/' + MEASURE.ADS_LABEL
-          });
-        }
-      }
+      var place = el.getAttribute('data-cta'); // text-top / image / main / fixed
 
       // Clarity: このセッションにタグを付けて絞り込めるようにする
       if (typeof clarity === 'function') clarity('set', 'cta_clicked', place);
-    });
+
+      if (typeof gtag !== 'function') return;   // 計測タグが無ければ普通に遷移
+
+      // GA4: どのCTAが押されたか
+      gtag('event', 'cta_click', {
+        cta_position: place,
+        page_title: document.title
+      });
+
+      if (MEASURE.ADS_ID.indexOf('X') !== -1) return;  // 広告IDが未設定（Xのまま）なら普通に遷移
+
+      // 別タブで開く操作（⌘/Ctrl/Shift/Alt＋クリック・中クリック）は
+      // 遷移を横取りせず、コンバージョンの送信だけ行う
+      var newTab = e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0;
+      var url    = el.getAttribute('href');
+      var hold   = !newTab && !!url;   // 遷移を待たせるかどうか
+
+      if (hold) { e.preventDefault(); navigating = true; }
+
+      var moved = false;
+      function go(){
+        if (moved || !hold) return;
+        moved = true;
+        window.location = url;
+      }
+
+      // Google広告: 疑似コンバージョン（スマート入札の学習用）
+      gtag('event', 'conversion', {
+        send_to: MEASURE.ADS_ID + '/' + MEASURE.ADS_LABEL,
+        event_callback: go
+      });
+
+      if (hold) setTimeout(go, WAIT_MS);   // 送信が返らないときの保険
+    }
   });
 
   // ---- スクロール到達率 ----
