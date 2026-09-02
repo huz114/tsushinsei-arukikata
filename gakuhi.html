@@ -19,8 +19,8 @@
   const MEASURE = {
     GA4_ID:        'G-9M597GDE8J',      // GA4の測定ID
     CLARITY_ID:    'y3sgntw5b4',        // Microsoft ClarityのプロジェクトID
-    ADS_ID:        'AW-XXXXXXXXX',      // Google広告のコンバージョンID
-    ADS_LABEL:     'xxxxxxxxxxxxxxxxxx' // Google広告のコンバージョンラベル
+    ADS_ID:        'AW-18394699589',      // Google広告のコンバージョンID
+    ADS_LABEL:     'K2YBCNfCjOscEMWuo8NE' // Google広告のコンバージョンラベル
   };
 </script>
 
@@ -266,6 +266,26 @@ footer{margin-top:60px; padding-top:24px; border-top:1px solid var(--line); font
   .cta-btn{display:inline-block; width:auto; padding:20px 48px;}
   #fixcta{display:none;} /* PCでは追従CTAを出さない */
 }
+
+/* ここから下は yametoke.html と共通のパーツ（人気6校〜CTAで使用） */
+.qbar{
+  background:var(--pink); color:#fff; font-weight:800;
+  font-size:18px; line-height:1.55; border-radius:8px;
+  padding:14px 18px; margin:38px 0 22px;
+}
+h2.qbar{border-left:none; font-size:20px; margin:52px 0 20px;}
+.school .operator{font-size:12.5px; color:var(--ink-sub); margin:2px 0 4px; line-height:1.55;}
+.school .operator strong{color:var(--ink); font-weight:700;}
+.cta-img{display:block; margin:0 0 20px; border-radius:10px; overflow:hidden; box-shadow:0 2px 10px rgba(0,0,0,.08);}
+.cta-img img{width:100%; height:auto; display:block;}
+.textlink-wrap{text-align:center; margin:6px 0 26px;}
+.textlink{color:var(--blue); font-weight:700; text-decoration:underline; font-size:19.2px; line-height:1.7;}
+.scroll-cue{text-align:center; margin:24px 0 20px; line-height:0;}
+.scroll-cue svg{animation:cue-bounce 1.4s ease-in-out infinite;}
+@keyframes cue-bounce{0%,100%{transform:translateY(0);} 50%{transform:translateY(7px);}}
+@media (prefers-reduced-motion:reduce){.scroll-cue svg{animation:none;}}
+.red{color:#e60000; font-weight:700;}
+.cite{font-size:12px; color:var(--ink-sub);}
 </style>
 </head>
 <body>
@@ -367,11 +387,11 @@ footer{margin-top:60px; padding-top:24px; border-top:1px solid var(--line); font
 <!-- ====================================================================
      学校による違い
      ==================================================================== -->
-<h2 id="closing">同じ「通信制」でも、学校によってまったく違います</h2>
+<h2 id="closing" class="qbar">人気の学校6選</h2>
 
-<p>通信制高校は<strong>全国に300校以上</strong>あります。<br>学費だけでなく、通い方も学べる内容も大きく違います。</p>
+<p>ご紹介するのは、<strong>いずれも名の知れた大手教育グループが運営</strong>し、<strong>通学スタイルを選べて、サポートの中身も具体的</strong>な通信制高校・サポート校です。</p>
 
-<p>たとえば、資料を請求できる学校にはこんな違いがあります。</p>
+<p>それぞれの運営母体と特徴を見てみましょう。</p>
 
 <div class="schools">
 
@@ -381,12 +401,13 @@ footer{margin-top:60px; padding-top:24px; border-top:1px solid var(--line); font
       <div class="school-body">
         <p class="badges"><span class="badge">通信制高校</span></p>
         <h3>N高等学校・S高等学校・R高等学校</h3>
+        <p class="operator">運営：<strong>角川ドワンゴ学園</strong>（KADOKAWA・ドワンゴ）</p>
       </div>
     </div>
     <ul>
-      <li><strong>全国に100ヶ所以上のキャンパス</strong>があり、お住まいの地域を問わず選択肢に入ります</li>
-      <li>ネットコースのほか、週5日・週3日・週1日＋のコースから選べます</li>
-      <li>在籍数は3万人を超えています</li>
+      <li>3万人突破、高校生の100人に一人がN高生！</li>
+      <li>全国にある100ヶ所以上のキャンパス</li>
+      <li>ネットコース、週5・週3・週1＋コースから選べる</li>
     </ul>
   </div>
 
@@ -396,11 +417,13 @@ footer{margin-top:60px; padding-top:24px; border-top:1px solid var(--line); font
       <div class="school-body">
         <p class="badges"><span class="badge">サポート校</span></p>
         <h3>トライ式高等学院</h3>
+        <p class="operator">運営：<strong>トライグループ</strong>（家庭教師のトライ）</p>
       </div>
     </div>
     <ul>
-      <li>通信制高校・サポート校で<strong>全国No.1の大学進学率</strong><span class="src">※在籍生徒数3,500名以上の通信制高校・サポート校において進学率全国1位。2023年3月23日 産経メディックス調べ。</span></li>
-      <li>体調に合わせて受講スタイルをいつでも変更できます</li>
+      <li>通信制高校・サポート校で、全国No.1<sup>*</sup>の大学進学率！</li>
+      <li>体調に合わせて受講スタイルをいつでも変更できる</li>
+      <li><span class="src">*在籍生徒数3,500名以上の通信制高校・サポート校において進学率全国1位。2023/3/23 産経メディックス調べ。</span></li>
     </ul>
   </div>
 
@@ -410,12 +433,13 @@ footer{margin-top:60px; padding-top:24px; border-top:1px solid var(--line); font
       <div class="school-body">
         <p class="badges"><span class="badge">通信制高校</span></p>
         <h3>飛鳥未来きぼう高等学校<span style="font-size:13px; font-weight:400;">（飛鳥未来高等学校・飛鳥未来きずな高等学校）</span></h3>
+        <p class="operator">運営：<strong>三幸学園</strong>（大手専門学校グループ）</p>
       </div>
     </div>
     <ul>
-      <li>自分に合った通学スタイルが選べて、服装も自由</li>
-      <li>多彩な専門分野が学べて、自分の「好き」が見つかります</li>
-      <li>豊富な学校行事があります</li>
+      <li>自分に合った通学スタイルが選べて、服装も自由！</li>
+      <li>多彩な専門分野が学べて、自分の「好き」が見つかる</li>
+      <li>豊富な学校行事で友達と一緒に思い出作り</li>
     </ul>
   </div>
 
@@ -425,12 +449,13 @@ footer{margin-top:60px; padding-top:24px; border-top:1px solid var(--line); font
       <div class="school-body">
         <p class="badges"><span class="badge">通信制高校</span></p>
         <h3>第一学院高等学校</h3>
+        <p class="operator">運営：<strong>ウィザス</strong>（総合教育サービス）</p>
       </div>
     </div>
     <ul>
-      <li>教育理念は「1／1（いちぶんのいち）の教育」</li>
+      <li>教育理念「1／1（いちぶんのいち）の教育」</li>
       <li>自分のペースで通える、安心できる高校生活</li>
-      <li>「成長実感型教育」を掲げています</li>
+      <li>「成長実感型教育」で自分を今よりも好きになる！</li>
     </ul>
   </div>
 
@@ -440,12 +465,13 @@ footer{margin-top:60px; padding-top:24px; border-top:1px solid var(--line); font
       <div class="school-body">
         <p class="badges"><span class="badge">通信制高校</span><span class="badge">サポート校</span></p>
         <h3>おおぞら高校</h3>
+        <p class="operator">運営：<strong>KTC学園</strong></p>
       </div>
     </div>
     <ul>
-      <li>「なりたい大人になるための学校。<sup>&reg;</sup>」を掲げています</li>
-      <li>先生＝マイコーチ<sup>&reg;</sup>が寄り添います</li>
-      <li>屋久島スクーリングがあります</li>
+      <li>なりたい大人になるための学校。<sup>&reg;</sup></li>
+      <li>先生＝マイコーチ<sup>&reg;</sup>が寄り添い共に歩む</li>
+      <li>屋久島スクーリングで人や自然とつながる！</li>
     </ul>
   </div>
 
@@ -455,20 +481,50 @@ footer{margin-top:60px; padding-top:24px; border-top:1px solid var(--line); font
       <div class="school-body">
         <p class="badges"><span class="badge">サポート校</span></p>
         <h3>ベネッセ高等学院</h3>
+        <p class="operator">運営：<strong>ベネッセ</strong></p>
       </div>
     </div>
     <ul>
-      <li>通信教育大手ベネッセのノウハウを活かした指導</li>
+      <li>通信教育大手ベネッセのノウハウを凝縮</li>
       <li>クラス担任と「赤ペンメンター」のWサポート制度</li>
-      <li>総合型選抜に対応しています</li>
+      <li>総合型選抜でやりたいことを叶えられる！</li>
     </ul>
   </div>
 
 </div>
 
-<p>どれが合うかは、お子様の状態とご家庭の事情によります。<br><strong>そして学費も、この違いによって変わります。</strong></p>
+<p>どの学校が合うかは、お子さんの状態やご家庭の事情によります。<br><strong>1校だけで決めず、まとめて見比べる</strong>のが確実です。</p>
 
-<p id="pre-cta">気になる学校をひとつずつ調べて、それぞれに問い合わせていくのは、正直かなり大変です。</p>
+<p id="pre-cta">とはいえ、1校ずつ調べて問い合わせるのは、正直かなり大変。<br>そんなときに役立つのが<span class="marker">「ズバット通信制高校比較」</span>です。</p>
+
+<p>地域や「<strong>通学のペース</strong>」「<strong>サポート</strong>」「<strong>進学</strong>」などの条件を選ぶだけで、<strong>〈人気校の6校〉を含む複数校の資料をまとめて資料請求</strong>できます。</p>
+
+<p class="textlink-wrap"><a href="https://ad-fam.com/ad/p/r?_site=49717&amp;_article=16318" class="textlink" data-cta="text-top" rel="sponsored nofollow">【完全無料・まとめて一括】<br>「ズバット通信制高校比較」で資料を取り寄せる</a></p>
+
+<div class="scroll-cue" aria-hidden="true">
+  <svg width="44" height="34" viewBox="0 0 44 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M8 7 L22 19 L36 7" stroke="#9AA0A6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M8 16 L22 28 L36 16" stroke="#9AA0A6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</div>
+
+<p class="qbar">実は、もう時間がありません</p>
+
+<p>そして、早いもので<strong>もう夏も終わり</strong>。<br><br><span class="marker">9月には、多くの通信制高校で出願が始まります</span>。<br><strong class="red">今すぐに、資料請求をして学校を比較する必要があります。</strong></p>
+
+<figure>
+  <picture>
+    <source media="(max-width:767px)" srcset="images/futoukou/04-futoukou-schedule-sp.webp">
+    <img src="images/futoukou/04-futoukou-schedule-pc.webp" alt="中3の進路スケジュール。今〜夏に情報収集・資料請求、9〜10月に出願、11〜12月に入試、4月に入学">
+  </picture>
+  <div class="imgph">中3の進路スケジュール（images/futoukou/04-futoukou-schedule-pc.webp）</div>
+</figure>
+
+<p>今や、<strong>毎年およそ31万人</strong>が通うようになった通信制高校。<span class="cite">※文部科学省「学校基本調査」（令和8年度速報値）</span></p>
+
+<p>人気のコースや学校には応募が殺到し、<strong class="red">「定員オーバー」</strong>になる可能性もあるので、早めの資料請求をお勧めします。</p>
+
+<p>わたしたち親が与えてあげられるのは、<span class="marker">「未来への選択肢」</span>くらいしかありません。<br>選択肢が多いうちに、選べる今が、資料請求のタイミングです。</p>
 
 
 <!-- ====================================================================
@@ -476,9 +532,10 @@ footer{margin-top:60px; padding-top:24px; border-top:1px solid var(--line); font
      ▼ここを差し替える④ ASPから発行されたURLに置き換える
      ==================================================================== -->
 <div class="cta">
+  <a href="https://ad-fam.com/ad/p/r?_site=49717&amp;_article=16318" class="cta-img" data-cta="image" rel="sponsored nofollow"><img src="images/futoukou/05-futoukou-cta.webp" alt="自分らしく通える高校は、きっと見つかる。"></a>
   <p><strong>やりたいこと・通学の頻度・お住まいの地域から、条件に合う通信制高校を探して、<br>まとめて資料請求できるサービスがあります。</strong></p>
-  <p>費用はかかりません。まずは何校か資料を取り寄せて、学費や通学スタイルを比べてみることから始めてみてください。</p>
-  <a href="https://ad-fam.com/ad/p/r?_site=49717&amp;_article=16463" class="cta-btn" data-cta="main" rel="sponsored nofollow"><span class="cta-badge">カンタン60秒</span>無料で人気校の資料を一括請求する</a>
+  <p>費用はかかりません。まずは何校か資料を取り寄せて、<strong>運営母体・通学スタイル・サポート体制</strong>を見比べてみることから始めてみてください。</p>
+  <a href="https://ad-fam.com/ad/p/r?_site=49717&amp;_article=16318" class="cta-btn" data-cta="main" rel="sponsored nofollow"><span class="cta-badge">カンタン60秒</span>無料で人気校の資料を一括請求する</a>
   <p class="cta-sub">※資料請求後、学校から連絡が入る場合があります。気になる点は、その際に直接ご確認いただけます。</p>
 </div>
 
@@ -511,7 +568,7 @@ footer{margin-top:60px; padding-top:24px; border-top:1px solid var(--line); font
 
 <!-- 追従CTA（スマホのみ） -->
 <div id="fixcta">
-  <a href="https://ad-fam.com/ad/p/r?_site=49717&amp;_article=16463" data-cta="fixed" rel="sponsored nofollow"><span class="cta-badge">カンタン60秒</span>無料で人気校の資料を一括請求する</a>
+  <a href="https://ad-fam.com/ad/p/r?_site=49717&amp;_article=16318" data-cta="fixed" rel="sponsored nofollow"><span class="cta-badge">カンタン60秒</span>無料で人気校の資料を一括請求する</a>
 </div>
 
 
@@ -544,28 +601,58 @@ footer{margin-top:60px; padding-top:24px; border-top:1px solid var(--line); font
 
   // CTAのhrefを一括設定
   // ---- CTAクリック計測 ----
+  // Google広告のコンバージョンが送信されてから遷移する（event_callback）。
+  // 遷移でページが破棄されて計測を取りこぼすのを防ぐ。
+  // 返事が来ないときは WAIT_MS で必ず遷移させるので、リンクが死ぬことはない。
+  var WAIT_MS   = 1200;
+  var navigating = false;   // 遷移待ちの間の連打を無視する
+
   document.querySelectorAll('[data-cta]').forEach(function(el){
-    el.addEventListener('click', function(){
-      var place = el.getAttribute('data-cta'); // main / fixed
+    // click は中クリックでは発火しないので auxclick も拾う（別タブで開く人を取りこぼさない）
+    ['click', 'auxclick'].forEach(function(type){ el.addEventListener(type, onCta); });
 
-      // GA4: どのCTAが押されたか
-      if (typeof gtag === 'function') {
-        gtag('event', 'cta_click', {
-          cta_position: place,
-          page_title: document.title
-        });
+    function onCta(e){
+      if (e.type === 'auxclick' && e.button !== 1) return;   // 右クリックは対象外
+      if (navigating) { e.preventDefault(); return; }        // すでに遷移処理に入っている
 
-        // Google広告: 疑似コンバージョン（スマート入札の学習用）
-        if (MEASURE.ADS_ID.indexOf('X') === -1) {
-          gtag('event', 'conversion', {
-            send_to: MEASURE.ADS_ID + '/' + MEASURE.ADS_LABEL
-          });
-        }
-      }
+      var place = el.getAttribute('data-cta'); // text-top / image / main / fixed
 
       // Clarity: このセッションにタグを付けて絞り込めるようにする
       if (typeof clarity === 'function') clarity('set', 'cta_clicked', place);
-    });
+
+      if (typeof gtag !== 'function') return;   // 計測タグが無ければ普通に遷移
+
+      // GA4: どのCTAが押されたか
+      gtag('event', 'cta_click', {
+        cta_position: place,
+        page_title: document.title
+      });
+
+      if (MEASURE.ADS_ID.indexOf('X') !== -1) return;  // 広告IDが未設定（Xのまま）なら普通に遷移
+
+      // 別タブで開く操作（⌘/Ctrl/Shift/Alt＋クリック・中クリック）は
+      // 遷移を横取りせず、コンバージョンの送信だけ行う
+      var newTab = e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0;
+      var url    = el.getAttribute('href');
+      var hold   = !newTab && !!url;   // 遷移を待たせるかどうか
+
+      if (hold) { e.preventDefault(); navigating = true; }
+
+      var moved = false;
+      function go(){
+        if (moved || !hold) return;
+        moved = true;
+        window.location = url;
+      }
+
+      // Google広告: 疑似コンバージョン（スマート入札の学習用）
+      gtag('event', 'conversion', {
+        send_to: MEASURE.ADS_ID + '/' + MEASURE.ADS_LABEL,
+        event_callback: go
+      });
+
+      if (hold) setTimeout(go, WAIT_MS);   // 送信が返らないときの保険
+    }
   });
 
   // ---- スクロール到達率 ----
